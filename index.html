@@ -784,7 +784,9 @@
         const view = views[button.dataset.blueprintView];
         if (!view) return;
 
-        blueprint.classList.toggle('is-build', button.dataset.blueprintView === 'build');
+        if (button.classList.contains('is-active')) return;
+
+        blueprint.classList.add('is-switching');
 
         blueprint.querySelectorAll('[data-blueprint-view]').forEach((tab) => {
           const active = tab === button;
@@ -792,15 +794,21 @@
           tab.setAttribute('aria-selected', String(active));
         });
 
-        map.src = view.src;
-        map.alt = view.alt;
-        map.parentElement.setAttribute('aria-label', view.label);
-        capacity.textContent = view.capacity;
-        caption.innerHTML = view.caption;
-        view.stats.forEach(([value, label], index) => {
-          statValues[index].textContent = value;
-          statLabels[index].innerHTML = label;
-        });
+        setTimeout(() => {
+          blueprint.classList.toggle('is-build', button.dataset.blueprintView === 'build');
+
+          map.src = view.src;
+          map.alt = view.alt;
+          map.parentElement.setAttribute('aria-label', view.label);
+          capacity.textContent = view.capacity;
+          caption.innerHTML = view.caption;
+          view.stats.forEach(([value, label], index) => {
+            statValues[index].textContent = value;
+            statLabels[index].innerHTML = label;
+          });
+
+          blueprint.classList.remove('is-switching');
+        }, 200);
       });
     });
   })();

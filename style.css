@@ -561,7 +561,7 @@ body > section { scroll-snap-align: start; scroll-snap-stop: always; }
 .blueprint-tabs { display: flex; gap: 12px; margin-top: 22px; }
 .blueprint-tabs button { width: 223px; height: 60px; border: 1px solid #454545; background: transparent; color: #3f3f3f; font: 700 16px/normal Inter, sans-serif; cursor: pointer; }
 .blueprint-tabs button.is-active { background: #f10b0b; border-color: #f10b0b; color: #fff; }
-.blueprint-gw { display: flex; flex-direction: column; margin-top: 78px; }
+.blueprint-gw { display: flex; flex-direction: column; margin-top: clamp(20px, 4.5vh, 45px); }
 .blueprint-gw b { color: #f00; font: 500 64px/100% Kanit, sans-serif; }
 .blueprint-gw span { margin-top: 10px; font: 400 14px/130% Inter, sans-serif; }
 .blueprint-stats { display: flex; margin-top: 40px; }
@@ -571,6 +571,8 @@ body > section { scroll-snap-align: start; scroll-snap-stop: always; }
 .blueprint-stats span { margin-top: 8px; white-space: nowrap; font: 400 16px/120% Inter, sans-serif; text-transform: capitalize; }
 .blueprint-map { position: relative; align-self: start; width: 100%; margin-top: 32px; }
 .blueprint-map-img { width: 100%; height: auto; display: block; border-radius: 4px; }
+.blueprint-map-img, .blueprint-gw, .blueprint-stats { transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out; }
+.gw-blueprint.is-switching .blueprint-map-img, .gw-blueprint.is-switching .blueprint-gw, .gw-blueprint.is-switching .blueprint-stats { opacity: 0; transform: translateY(5px); }
 .blueprint-note { position: absolute; bottom: 43px; left: 0; margin: 0; color: #818181; font: 400 12px/15px Inter, sans-serif; }
 .blueprint-logo { position: absolute; left: 0; bottom: 0; width: 90px; height: auto; }
 
