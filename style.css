@@ -473,13 +473,13 @@ body > section { scroll-snap-align: start; scroll-snap-stop: always; }
 .presence h1 { font-size: 37px; line-height: 1.1; letter-spacing: 0; margin: 0 0 18px; font-weight: 700; }
 .presence h1 strong { color: #ff0808; font-weight: 700; }
 .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 21px; }
-.unimacts-card, .zetwerk-card { height: clamp(280px, 38vh, 489px); padding: 20px; position: relative; }
+.unimacts-card, .zetwerk-card { height: 489px; padding: 20px; position: relative; }
 .unimacts-card { background: #f5f5f5; }
 .unimacts-mark, .footer-mark { display: inline-flex; flex-direction: column; line-height: .85; }
 .unimacts-mark b, .footer-mark b { color: #f10d15; font-size: 25px; font-weight: 800; font-style: italic; letter-spacing: -1px; }
 .unimacts-mark small, .footer-mark small { color: #222; font-size: 7px; font-style: italic; font-weight: 700; text-align: right; }
-.unimacts-card h2, .zetwerk-card h2 { color: #ff0b14; font-size: 15px; line-height: 1; margin: clamp(15px, 2.5vh, 27px) 0 clamp(12px, 2.2vh, 25px); font-weight: 800; }
-.metric-grid, .zetwerk-metrics { display: grid; grid-template-columns: 1fr 1fr; row-gap: clamp(10px, 1.8vh, 20px); column-gap: 26px; }
+.unimacts-card h2, .zetwerk-card h2 { color: #ff0b14; font-size: 15px; line-height: 1; margin: 27px 0 25px; font-weight: 800; }
+.metric-grid, .zetwerk-metrics { display: grid; grid-template-columns: 1fr 1fr; row-gap: 20px; column-gap: 26px; }
 .metric, .zmetric { display: flex; align-items: center; min-width: 0; gap: 9px; }
 .metric svg, .zmetric svg { flex: 0 0 39px; width: 39px; height: 39px; fill: none; stroke: currentColor; stroke-width: 1; }
 .metric { color: #fb0a0a; }
