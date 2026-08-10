@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unimacts – Energy Infrastructure</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Bottom-right prev/next navigation -->
+  <div class="arrow-nav">
+    <button class="arrow-btn" id="nav-prev" aria-label="Previous section">
+      <svg width="13" height="16" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="9" y1="21" x2="9" y2="3" stroke="currentColor" stroke-width="1.5"/>
+        <polyline points="2,10 9,2 16,10" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <button class="arrow-btn" id="nav-next" aria-label="Next section">
+      <svg width="13" height="16" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="9" y1="1" x2="9" y2="19" stroke="currentColor" stroke-width="1.5"/>
+        <polyline points="2,12 9,20 16,12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Vertical dot navigation -->
+  <nav class="dot-nav" aria-label="Section navigation">
+    <button class="dot" data-index="0" aria-label="Hero"></button>
+    <button class="dot" data-index="1" aria-label="US Presence"></button>
+    <button class="dot" data-index="2" aria-label="Customers"></button>
+    <button class="dot" data-index="3" aria-label="GW Blueprint"></button>
+    <button class="dot" data-index="4" aria-label="Team"></button>
+    <button class="dot" data-index="5" aria-label="Value Chain"></button>
+    <button class="dot" data-index="6" aria-label="Product Portfolio"></button>
+    <button class="dot" data-index="7" aria-label="Data Centres"></button>
+    <button class="dot" data-index="8" aria-label="Lead Times"></button>
+    <button class="dot" data-index="9" aria-label="Contact"></button>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       SECTION 1 — HERO
+  ══════════════════════════════════════ -->
+  <div class="hero">
+    <div class="hero-container">
+
+      <header class="hero-header">
+        <svg xmlns="http://www.w3.org/2000/svg" width="198" height="34" viewBox="0 0 198 34" fill="none">
+          <path d="M63.7257 24.864H65.4055L68.9582 33.2428H67.0555L66.2974 31.3797H62.7942L62.0361 33.2428H60.178L63.7307 24.864H63.7257ZM65.6383 29.7595L64.5384 27.064L63.4383 29.7595H65.6433H65.6383Z" fill="white"/>
+          <path d="M72.947 31.8505L77.5056 26.5288H73.0907V24.9284H79.8493V26.3158L75.2907 31.6374H79.8493V33.2428H72.947V31.8554V31.8505Z" fill="white"/>
+          <path d="M81.2761 24.9234H87.5144V26.5536H83.0748V28.2383H86.9793V29.8685H83.0748V31.6126H87.5739V33.2428H81.2761V24.9284V24.9234Z" fill="white"/>
+          <path d="M90.8393 26.6081H88.3171V24.9234H95.1847V26.6081H92.6626V33.2378H90.8393V26.6081Z" fill="white"/>
+          <path d="M95.6456 24.9234H97.5979L99.3123 30.5523L101.17 24.8937H102.731L104.589 30.5523L106.304 24.9234H108.206L105.377 33.2973H103.792L101.924 27.8567L100.056 33.2973H98.4699L95.6406 24.9234H95.6456Z" fill="white"/>
+          <path d="M109.267 24.9234H115.505V26.5536H111.065V28.2383H114.97V29.8685H111.065V31.6126H115.564V33.2428H109.272V24.9284L109.267 24.9234Z" fill="white"/>
+          <path d="M116.902 24.9234H120.688C121.738 24.9234 122.541 25.2058 123.101 25.7657C123.577 26.2414 123.809 26.8756 123.809 27.6635V27.6883C123.809 28.3621 123.646 28.9121 123.319 29.3333C122.992 29.7545 122.561 30.0666 122.036 30.2648L124.057 33.2378H121.927L120.148 30.577H118.716V33.2378H116.892V24.9234H116.897H116.902ZM120.574 28.9617C121.025 28.9617 121.367 28.8527 121.609 28.6396C121.852 28.4266 121.971 28.1392 121.971 27.7824V27.7577C121.971 27.3613 121.847 27.0639 121.595 26.8657C121.342 26.6675 120.99 26.5684 120.539 26.5684H118.726V28.9568H120.574V28.9617Z" fill="white"/>
+          <path d="M125.162 24.9234H126.986V28.5604L130.35 24.9234H132.55L129.176 28.4514L132.704 33.2378H130.513L127.947 29.6951L126.986 30.691V33.2329H125.162V24.9185V24.9234Z" fill="white"/>
+          <path d="M140.647 33.3815C140.037 33.3815 139.477 33.2725 138.952 33.0495C138.432 32.8265 137.981 32.5243 137.604 32.1428C137.228 31.7612 136.93 31.3054 136.717 30.7802C136.504 30.2599 136.4 29.7 136.4 29.1054V29.0807C136.4 28.4861 136.509 27.9311 136.717 27.4108C136.93 26.8906 137.228 26.4347 137.604 26.0433C137.981 25.6518 138.437 25.3446 138.967 25.1167C139.497 24.8937 140.082 24.7797 140.716 24.7797C141.102 24.7797 141.454 24.8094 141.776 24.8738C142.098 24.9383 142.386 25.0275 142.643 25.1365C142.901 25.2455 143.144 25.3793 143.367 25.5378C143.585 25.6964 143.793 25.8698 143.981 26.0581L142.822 27.4009C142.5 27.1086 142.168 26.8806 141.831 26.7122C141.494 26.5437 141.117 26.4644 140.701 26.4644C140.354 26.4644 140.032 26.5338 139.735 26.6676C139.438 26.8014 139.185 26.9896 138.972 27.2274C138.759 27.4653 138.595 27.7428 138.476 28.0549C138.357 28.3671 138.298 28.7041 138.298 29.0608V29.0856C138.298 29.4423 138.357 29.7793 138.476 30.0964C138.595 30.4135 138.759 30.691 138.967 30.9288C139.175 31.1667 139.428 31.355 139.725 31.4937C140.022 31.6324 140.349 31.7018 140.701 31.7018C141.177 31.7018 141.573 31.6126 141.9 31.4392C142.227 31.2657 142.554 31.0279 142.876 30.7257L144.036 31.9C143.823 32.1329 143.6 32.336 143.372 32.5194C143.144 32.7027 142.891 32.8563 142.624 32.9901C142.351 33.1238 142.054 33.223 141.732 33.2874C141.41 33.3568 141.048 33.3914 140.647 33.3914V33.3815Z" fill="white"/>
+          <path d="M149.229 33.3815C148.589 33.3815 148 33.2676 147.465 33.0446C146.924 32.8217 146.464 32.5144 146.072 32.1329C145.681 31.7464 145.379 31.3005 145.161 30.7802C144.947 30.2599 144.833 29.705 144.833 29.1104V29.0856C144.833 28.491 144.943 27.936 145.165 27.4157C145.388 26.8955 145.691 26.4397 146.082 26.0482C146.474 25.6568 146.939 25.3495 147.479 25.1216C148.02 24.8986 148.609 24.7847 149.248 24.7847C149.888 24.7847 150.477 24.8986 151.012 25.1216C151.552 25.3446 152.013 25.6518 152.405 26.0334C152.796 26.4198 153.098 26.8658 153.316 27.386C153.534 27.9063 153.643 28.4613 153.643 29.0559V29.0807C153.643 29.6753 153.534 30.2302 153.311 30.7505C153.088 31.2708 152.786 31.7266 152.395 32.1181C152.003 32.5095 151.542 32.8167 150.997 33.0446C150.457 33.2676 149.868 33.3815 149.229 33.3815ZM149.248 31.6919C149.61 31.6919 149.947 31.6225 150.254 31.4888C150.561 31.355 150.824 31.1667 151.042 30.9289C151.26 30.691 151.429 30.4135 151.552 30.1014C151.676 29.7892 151.736 29.4522 151.736 29.0955V29.0707C151.736 28.714 151.676 28.377 151.552 28.0599C151.429 27.7428 151.255 27.4653 151.032 27.2275C150.809 26.9896 150.542 26.8014 150.234 26.6626C149.927 26.5239 149.59 26.4545 149.229 26.4545C148.867 26.4545 148.52 26.5239 148.218 26.6577C147.915 26.7915 147.653 26.9798 147.435 27.2176C147.217 27.4554 147.048 27.7329 146.924 28.045C146.801 28.3572 146.741 28.6941 146.741 29.0509V29.0757C146.741 29.4325 146.801 29.7694 146.924 30.0865C147.048 30.4036 147.222 30.6811 147.445 30.9189C147.668 31.1568 147.935 31.3451 148.238 31.4838C148.54 31.6225 148.877 31.6919 149.248 31.6919Z" fill="white"/>
+          <path d="M154.966 24.9234H156.933L159.114 28.4414L161.294 24.9234H163.261V33.2378H161.462V27.8072L159.128 31.3599H159.084L156.775 27.8419V33.2378H154.976V24.9234H154.966Z" fill="white"/>
+          <path d="M164.946 24.9234H168.33C168.825 24.9234 169.271 24.9928 169.663 25.1315C170.054 25.2703 170.386 25.4685 170.659 25.7162C170.931 25.9689 171.144 26.2761 171.288 26.623C171.432 26.9698 171.506 27.3662 171.506 27.7923V27.8171C171.506 28.3027 171.417 28.7239 171.243 29.0905C171.07 29.4572 170.832 29.7595 170.53 30.0023C170.228 30.2451 169.871 30.4333 169.464 30.5523C169.058 30.6761 168.622 30.7356 168.156 30.7356H166.774V33.2329H164.951V24.9185L164.946 24.9234ZM168.211 29.1153C168.667 29.1153 169.023 28.9964 169.276 28.7536C169.529 28.5108 169.653 28.2135 169.653 27.8567V27.832C169.653 27.4207 169.524 27.1086 169.256 26.8955C168.994 26.6824 168.632 26.5734 168.176 26.5734H166.769V29.1153H168.211Z" fill="white"/>
+          <path d="M175.396 24.864H177.075L180.628 33.2428H178.725L177.967 31.3797H174.464L173.706 33.2428H171.848L175.401 24.864H175.396ZM177.313 29.7595L176.213 27.064L175.113 29.7595H177.318H177.313Z" fill="white"/>
+          <path d="M181.609 24.9234H183.289L187.168 30.0419V24.9234H188.967V33.2378H187.416L183.403 27.9509V33.2378H181.604V24.9234H181.609Z" fill="white"/>
+          <path d="M192.996 29.9626L189.81 24.9234H191.94L193.917 28.2631L195.929 24.9234H198L194.814 29.9279V33.2428H192.991V29.9675L192.996 29.9626Z" fill="white"/>
+          <path d="M44.2576 13.1802L40.596 0.505418H28.9122L24.8838 19.5275H31.8158L34.6847 5.98064H34.7392L38.6437 19.5225H49.9608L53.9892 0.500458H47.0572L44.3716 13.1752H44.2576V13.1802Z" fill="white"/>
+          <path d="M65.5342 0.505402H57.5567L53.5283 19.5275H61.5107L65.5342 0.505402Z" fill="white"/>
+          <path d="M76.8661 19.5275H84.586L92.8162 5.22254H92.8707L89.8432 19.5325H97.2459L101.274 0.510376H89.1197L82.5842 13.2595H82.5297L81.2661 0.510376H69.1612L65.1328 19.5325H71.9063L74.9387 5.22747H75.018L76.8711 19.5325L76.8661 19.5275Z" fill="white"/>
+          <path d="M121.951 0.505402H112.002L98.3213 19.5275H106.145L108.286 16.3662H118.077L118.8 19.5275H127.595L121.951 0.505402ZM115.555 5.56439L117.091 12.204H111.08L115.555 5.56439Z" fill="white"/>
+          <path d="M127.863 10.0189C126.574 16.1036 128.869 20.0279 138.372 20.0279C142.44 20.0279 146.355 19.1311 148.916 17.0748C150.685 15.6527 151.22 13.9879 151.637 12.2784H143.496C142.896 14.7311 141.479 15.8608 139.061 15.8608C135.964 15.8608 135.483 13.1752 136.152 10.014C136.222 9.67704 136.712 8.13108 136.955 7.52162C137.753 5.51982 139.309 4.16217 141.543 4.16217C143.654 4.16217 144.437 5.17792 144.199 7.42747C146.325 7.4027 148.461 7.38784 150.606 7.37297C151.196 7.37297 151.78 7.36305 152.36 7.36305C152.88 4.71711 152.717 3.58243 151.795 2.47748C150.477 0.896847 147.356 0 142.604 0C133.789 0 129.954 3.74594 128.556 7.67026C128.353 8.24503 127.912 9.73154 127.853 10.014L127.863 10.0189Z" fill="white"/>
+          <path d="M168.255 5.14323H174.479L175.46 0.505402H155.036L154.054 5.14323H160.278L157.231 19.5275H165.213L168.26 5.14323H168.255Z" fill="white"/>
+          <path d="M189.255 7.58107C187.02 6.94188 184.983 6.55045 184.532 6.01036C184.339 5.80225 184.314 5.43063 184.374 5.13829C184.582 4.16216 185.608 3.52792 187.287 3.52792C188.283 3.52792 189.041 3.66171 189.512 4.05811C190.008 4.4545 190.206 5.11351 190.037 6.16396H197.861C198.585 2.23964 196.618 0 188.561 0C180.975 0 176.773 1.87297 175.891 6.03513C175.827 6.33243 175.752 6.64955 175.752 6.97162C175.752 7.68514 175.98 8.76532 176.525 9.35496C178.596 11.5946 187.466 12.4915 188.283 13.7054C188.447 13.9433 188.516 14.2356 188.442 14.5775C188.12 16.1085 186.252 16.5 184.597 16.5C183.546 16.5 182.897 16.2374 182.476 15.7369C182.085 15.2365 182.035 14.4685 182.233 13.418H174.092C173.503 16.946 173.349 20.0329 183.641 20.0329C192.277 20.0329 196.097 17.6099 196.9 13.8392C197.291 11.9959 196.761 10.9554 196.152 10.3063C195.052 9.14188 190.657 7.97747 189.259 7.58107H189.255Z" fill="white"/>
+          <path d="M7.79419 12.7639L0.232924 12.0455L0.143739 12.4667C-0.297252 14.5279 0.173457 17.0846 3.01265 18.6306L8.00229 13.8491C7.87346 13.5121 7.8041 13.1455 7.79419 12.7639Z" fill="white"/>
+          <path d="M9.00313 15.1324L3.60718 18.9329C5.01934 19.5572 6.93691 19.9536 9.46394 19.9982L9.99908 15.5883C9.61755 15.4941 9.29052 15.3306 9.00809 15.1324H9.00313Z" fill="white"/>
+          <path d="M11.8076 15.5833L10.45 20.0031C12.9968 19.9536 15.0828 19.5621 16.7626 18.9378L12.9918 15.1324C12.6153 15.3356 12.2189 15.4892 11.8076 15.5833Z" fill="white"/>
+          <path d="M15.2267 12.7639C15.0483 13.1504 14.8204 13.5171 14.5479 13.8491L17.4961 18.6306C20.9992 17.0846 22.56 14.5279 23.001 12.4667L23.0902 12.0455L15.2267 12.7639Z" fill="white"/>
+          <path d="M16.1086 9.18153C15.9698 9.83558 15.8361 10.445 15.7271 10.9603L23.1694 11.664C24.1059 7.2937 25.5577 0.505402 25.5577 0.505402H17.9815C17.9815 0.505402 17.2581 3.85495 16.5743 7.04099L23.2536 2.33378L16.1135 9.17657L16.1086 9.18153Z" fill="white"/>
+          <path d="M8.43343 9.18155L4.22172 2.33876L8.88931 7.04596C9.56814 3.85497 10.2767 0.510376 10.2767 0.510376H2.70055C2.70055 0.510376 1.24874 7.29369 0.312256 11.6689L8.05685 10.9653C8.16586 10.445 8.2947 9.84056 8.43839 9.18651L8.43343 9.18155Z" fill="white"/>
+        </svg>
+      </header>
+
+      <div class="body-grid">
+
+        <!-- Left column: stats -->
+        <div class="left-col">
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-value">~6.3 GW</span>
+              <span class="stat-label">US Capacity Delivered</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">41</span>
+              <span class="stat-label">Power Transformers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-value">12–24 MO</span>
+              <span class="stat-label">Vs 33–37 Mo Market Average</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom logo: separate absolutely positioned div -->
+        <div class="bottom-logo">
+          <svg xmlns="http://www.w3.org/2000/svg" width="110" height="19" viewBox="0 0 198 34" fill="none">
+            <path d="M63.7257 24.864H65.4055L68.9582 33.2428H67.0555L66.2974 31.3797H62.7942L62.0361 33.2428H60.178L63.7307 24.864H63.7257ZM65.6383 29.7595L64.5384 27.064L63.4383 29.7595H65.6433H65.6383Z" fill="white"/>
+            <path d="M72.947 31.8505L77.5056 26.5288H73.0907V24.9284H79.8493V26.3158L75.2907 31.6374H79.8493V33.2428H72.947V31.8554V31.8505Z" fill="white"/>
+            <path d="M81.2761 24.9234H87.5144V26.5536H83.0748V28.2383H86.9793V29.8685H83.0748V31.6126H87.5739V33.2428H81.2761V24.9284V24.9234Z" fill="white"/>
+            <path d="M90.8393 26.6081H88.3171V24.9234H95.1847V26.6081H92.6626V33.2378H90.8393V26.6081Z" fill="white"/>
+            <path d="M95.6456 24.9234H97.5979L99.3123 30.5523L101.17 24.8937H102.731L104.589 30.5523L106.304 24.9234H108.206L105.377 33.2973H103.792L101.924 27.8567L100.056 33.2973H98.4699L95.6406 24.9234H95.6456Z" fill="white"/>
+            <path d="M109.267 24.9234H115.505V26.5536H111.065V28.2383H114.97V29.8685H111.065V31.6126H115.564V33.2428H109.272V24.9284L109.267 24.9234Z" fill="white"/>
+            <path d="M116.902 24.9234H120.688C121.738 24.9234 122.541 25.2058 123.101 25.7657C123.577 26.2414 123.809 26.8756 123.809 27.6635V27.6883C123.809 28.3621 123.646 28.9121 123.319 29.3333C122.992 29.7545 122.561 30.0666 122.036 30.2648L124.057 33.2378H121.927L120.148 30.577H118.716V33.2378H116.892V24.9234H116.897H116.902ZM120.574 28.9617C121.025 28.9617 121.367 28.8527 121.609 28.6396C121.852 28.4266 121.971 28.1392 121.971 27.7824V27.7577C121.971 27.3613 121.847 27.0639 121.595 26.8657C121.342 26.6675 120.99 26.5684 120.539 26.5684H118.726V28.9568H120.574V28.9617Z" fill="white"/>
+            <path d="M125.162 24.9234H126.986V28.5604L130.35 24.9234H132.55L129.176 28.4514L132.704 33.2378H130.513L127.947 29.6951L126.986 30.691V33.2329H125.162V24.9185V24.9234Z" fill="white"/>
+            <path d="M44.2576 13.1802L40.596 0.505418H28.9122L24.8838 19.5275H31.8158L34.6847 5.98064H34.7392L38.6437 19.5225H49.9608L53.9892 0.500458H47.0572L44.3716 13.1752H44.2576V13.1802Z" fill="white"/>
+            <path d="M65.5342 0.505402H57.5567L53.5283 19.5275H61.5107L65.5342 0.505402Z" fill="white"/>
+            <path d="M76.8661 19.5275H84.586L92.8162 5.22254H92.8707L89.8432 19.5325H97.2459L101.274 0.510376H89.1197L82.5842 13.2595H82.5297L81.2661 0.510376H69.1612L65.1328 19.5325H71.9063L74.9387 5.22747H75.018L76.8711 19.5325L76.8661 19.5275Z" fill="white"/>
+            <path d="M7.79419 12.7639L0.232924 12.0455L0.143739 12.4667C-0.297252 14.5279 0.173457 17.0846 3.01265 18.6306L8.00229 13.8491C7.87346 13.5121 7.8041 13.1455 7.79419 12.7639Z" fill="white"/>
+            <path d="M9.00313 15.1324L3.60718 18.9329C5.01934 19.5572 6.93691 19.9536 9.46394 19.9982L9.99908 15.5883C9.61755 15.4941 9.29052 15.3306 9.00809 15.1324H9.00313Z" fill="white"/>
+            <path d="M11.8076 15.5833L10.45 20.0031C12.9968 19.9536 15.0828 19.5621 16.7626 18.9378L12.9918 15.1324C12.6153 15.3356 12.2189 15.4892 11.8076 15.5833Z" fill="white"/>
+            <path d="M15.2267 12.7639C15.0483 13.1504 14.8204 13.5171 14.5479 13.8491L17.4961 18.6306C20.9992 17.0846 22.56 14.5279 23.001 12.4667L23.0902 12.0455L15.2267 12.7639Z" fill="white"/>
+            <path d="M16.1086 9.18153C15.9698 9.83558 15.8361 10.445 15.7271 10.9603L23.1694 11.664C24.1059 7.2937 25.5577 0.505402 25.5577 0.505402H17.9815C17.9815 0.505402 17.2581 3.85495 16.5743 7.04099L23.2536 2.33378L16.1135 9.17657L16.1086 9.18153Z" fill="white"/>
+            <path d="M8.43343 9.18155L4.22172 2.33876L8.88931 7.04596C9.56814 3.85497 10.2767 0.510376 10.2767 0.510376H2.70055C2.70055 0.510376 1.24874 7.29369 0.312256 11.6689L8.05685 10.9653C8.16586 10.445 8.2947 9.84056 8.43839 9.18651L8.43343 9.18155Z" fill="white"/>
+          </svg>
+        </div>
+
+        <!-- Right column: heading + desc + image -->
+        <div class="right-col">
+          <div class="text-block">
+            <h1 class="hero-heading">A Trusted Partner For Your Energy Infrastructure Needs.</h1>
+            <p class="hero-desc">
+              Critical power equipment for utility-scale solar and storage, AI data centres, industry, utilities and oil
+              &amp; gas — engineered, manufactured and delivered through a dedicated global network.
+            </p>
+          </div>
+          <div class="image-wrap">
+            <img src="public/image 10.png" alt="Power Transformer" class="transformer-img" />
+          </div>
+        </div>
+
+      </div><!-- /.body-grid -->
+    </div><!-- /.hero-container -->
+  </div><!-- /.hero -->
+
+  <!-- ══════════════════════════════════════
+       SECTION 2 — US PRESENCE
+  ══════════════════════════════════════ -->
+  <main class="presence">
+    <div class="container">
+      <header class="section-head"><span>COMPANY</span><i></i></header>
+      <h1>US presence.<br><strong>Global manufacturing muscle.</strong></h1>
+
+      <section class="cards" aria-label="Unimacts company presence">
+        <article class="unimacts-card">
+          <div class="unimacts-mark" aria-label="Unimacts, a Zetwerk company"><b>◢UNIMACTS</b><small>A ZETWERK COMPANY</small></div>
+          <h2>THE US ENERGY-MANUFACTURING STORY</h2>
+          <div class="metric-grid">
+            <div class="metric"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M10.5 21.2h8.3l-4.9 17.6 15.6-24.2h-5.7L26 1.2 10.5 21.2Z"/></svg><div><b>10+ GW</b><span>generation capacity supported</span></div></div>
+            <div class="metric"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M1.6 38.4V13.9h12.3M13.9 38.4V1.6h12.2v36.8m0-18.4h12.3v18.4M1.6 38.4h36.8"/></svg><div><b>$1B+</b><span>sales to US customers</span></div></div>
+            <div class="metric"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M30 10h5.6v28.8H4.4V10H10m20 28.8V1.2H10v37.6m13.1-7.8h-6.3v7.8M0 38.8h40M15 5v5.8m5-5.8v5.8m5-5.8v5.8M15 13.2V19m5-5.8V19m5-5.8V19M15 21.4v5.8m5-5.8v5.8m5-5.8v5.8"/></svg><div><b>7</b><span>facilities owned in the US</span></div></div>
+            <div class="metric people"><svg viewBox="0 0 53 38" aria-hidden="true"><path d="M41.3 36.3H11.7v-2.2c0-5.4 4.3-9.7 9.6-9.7h10.3c5.3 0 9.6 4.3 9.6 9.7v2.2ZM34.6 16.2a8.2 8.2 0 1 1-16.4 0 8.2 8.2 0 0 1 16.4 0ZM37.3 26.3h4.5c5.3 0 9.6 4.4 9.6 9.7v.3H41.7m-7.1-22.5a6.9 6.9 0 1 1 4.4 12.5M15.7 26.3h-4.5c-5.3 0-9.6 4.4-9.6 9.7v.3h9.8m7-22.5a6.9 6.9 0 1 0-4.4 12.5m12.4-1v10.2"/></svg><div><b>200+</b><span>employees · HQ Sloan, Nevada</span></div></div>
+          </div>
+          <ul class="story-list">
+            <li>Two dedicated Nevada factories with Nextracker — supporting 2+ GW of new US solar every year</li>
+            <li>Houston line producing domestic steel module frames<br>(Origami Solar, now Nextracker)</li>
+            <li>First solar component deliveries to the US dating back to 2008</li>
+          </ul>
+        </article>
+
+        <article class="zetwerk-card">
+          <div class="watermark" aria-hidden="true"></div>
+          <div class="zetwerk-name">ZETWERK<sup>®</sup></div>
+          <h2>THE BANKABLE PARENT</h2>
+          <div class="zetwerk-metrics">
+            <div class="zmetric money"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18.4"/><path d="M20 5.9v28.2m-1.6-14.1h3.1a4.7 4.7 0 1 1 0 9.4h-3.1a4.7 4.7 0 0 1-4.7-4.7m7.8-4.7h-3.1a4.7 4.7 0 1 1 0-9.4h3.1a4.7 4.7 0 0 1 4.7 4.7"/></svg><div><b>$3.1B</b><span>valuation — Series F, Dec 2024</span></div></div>
+            <div class="zmetric rise"><svg viewBox="0 0 44 30"><path d="M40 6.5V2h-4.5M0 30 19.7 10.3v11.9L39.5 2.5"/></svg><div><b>~$1.7B</b><span>FY24 gross revenue, +26% YoY</span></div></div>
+            <div class="zmetric"><svg viewBox="0 0 40 40"><path d="M1.6 38.4V13.9h12.3M13.9 38.4V1.6h12.2v36.8m0-18.4h12.3v18.4M1.6 38.4h36.8"/></svg><div><b>$859M+</b><span>raised · IPO DRHP filed</span></div></div>
+            <div class="zmetric"><svg viewBox="0 0 40 40"><path d="M30 10h5.6v28.8H4.4V10H10m20 28.8V1.2H10v37.6m13.1-7.8h-6.3v7.8M0 38.8h40M15 5v5.8m5-5.8v5.8m5-5.8v5.8M15 13.2V19m5-5.8V19m5-5.8V19M15 21.4v5.8m5-5.8v5.8m5-5.8v5.8"/></svg><div><b>3,500+</b><span>active customers ·<br>20+ owned facilities</span></div></div>
+          </div>
+          <ul class="zetwerk-list"><li>KRYFS acquisition: India's leading transformer-core maker — 50,000 MT/yr CRGO,<br>40+ years, tier-1 approvals (NTPC, POWERGRID), supplier to Siemens &amp; Hitachi</li><li>Value-chain custody from CRGO core and tank to finished, tested transformer</li></ul>
+          <div class="backed"><b>Backed by</b><div><span>khosla ventures</span><strong>Greenoaks</strong><span>Accel</span><span>peakxv</span><span>Lightspeed</span><small>DIGITAL<br>PARTNERS</small><span>Avenir</span></div></div>
+        </article>
+      </section>
+      <div class="footer-mark"><b>◢UNIMACTS</b><small>A ZETWERK COMPANY</small></div>
+    </div>
+  </main>
+
+  <!-- ══════════════════════════════════════
+       SECTION 3 — CUSTOMERS
+  ══════════════════════════════════════ -->
+  <section class="customers" aria-labelledby="customers-heading">
+    <div class="customers-container">
+      <header class="customers-head"><span>CUSTOMERS</span><i></i></header>
+      <div class="customers-intro">
+        <h2 id="customers-heading">Trusted by the builders of US energy</h2>
+        <p>Developers, IPPs, EPCs and OEMs who already run on Unimacts manufacturing.</p>
+      </div>
+
+      <div class="customer-groups">
+        <div class="customer-row">
+          <h3>POWER<br>DEVELOPERS &amp; IPPS</h3>
+          <div class="logo-grid six-logos">
+            <img src="public/blue_ridge_power.png" alt="Blue Ridge Power" title="Blue Ridge Power">
+            <img src="public/bayWare.png" alt="BayWa r.e." title="BayWa r.e.">
+            <img src="public/res.png" alt="RES Americas" title="RES Americas">
+            <img src="public/solv.png" alt="SOLV Energy" title="SOLV Energy">
+            <img src="public/signal_energy.png" alt="Signal Energy Constructors" title="Signal Energy Constructors">
+            <img src="public/headwater_enerygy.png" alt="Headwater Energy" title="Headwater Energy">
+            <img src="public/grid_works.png" alt="Grid Works" title="Grid Works">
+          </div>
+        </div>
+        <div class="customer-row">
+          <h3>EPCS &amp; ELECTRICAL<br>CONTRACTORS</h3>
+          <div class="logo-grid seven-logos">
+            <img src="public/mortenson.png" alt="Mortenson" title="Mortenson">
+            <img src="public/pcl.png" alt="PCL Construction" title="PCL Construction">
+            <img src="public/psc.png" alt="Primoris Renewable Energy" title="Primoris Renewable Energy">
+            <img src="public/rosendin.png" alt="Rosendin Electric" title="Rosendin Electric">
+            <img src="public/myr.png" alt="MYR Energy Services" title="MYR Energy Services">
+            <img src="public/cupertino_electirc.png" alt="Cupertino Electric" title="Cupertino Electric">
+            <img src="public/csi.png" alt="CSI Electrical Contractors" title="CSI Electrical Contractors">
+          </div>
+        </div>
+        <div class="customer-row technology-row">
+          <h3>OEM &amp;<br>TECHNOLOGY<br>PARTNERS</h3>
+          <div class="logo-grid technology-logos">
+            <img src="public/nextracker.png" alt="Nextracker" title="Nextracker">
+            <img src="public/array_technologies.png" alt="Array Technologies" title="Array Technologies">
+            <img src="public/gamechange_solar.png" alt="GameChange Solar" title="GameChange Solar">
+            <img src="public/ftc_solar.png" alt="FTC Solar" title="FTC Solar">
+            <img src="public/seimens.png" alt="Siemens Gamesa" title="Siemens Gamesa Renewable Energy">
+            <img src="public/nordex.png" alt="Nordex" title="Nordex">
+            <img src="public/acciona.png" alt="Acciona Windpower" title="Acciona Windpower">
+            <img src="public/pvh.png" alt="PVH" title="PVH">
+            <img src="public/nevados.png" alt="Nevados" title="Nevados">
+            <img src="public/honeywell.png" alt="Honeywell" title="Honeywell">
+          </div>
+        </div>
+      </div>
+      <div class="customers-footer"><b>◢UNIMACTS</b><small>A ZETWERK COMPANY</small></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 4 — GW BLUEPRINT
+  ══════════════════════════════════════ -->
+  <section class="gw-blueprint" aria-labelledby="blueprint-heading">
+    <div class="blueprint-container">
+      <header class="blueprint-head"><span>THE GW BLUEPRINT</span><i></i></header>
+      <div class="blueprint-layout">
+        <div class="blueprint-copy">
+          <h2 id="blueprint-heading">6.3 GW of US generation flows through our transformers</h2>
+          <div class="blueprint-tabs" role="tablist" aria-label="Blueprint view">
+            <button type="button" class="is-active" role="tab" aria-selected="true" data-blueprint-view="deliver">Where we deliver</button>
+            <button type="button" role="tab" aria-selected="false" data-blueprint-view="build">Where we build</button>
+          </div>
+          <div class="blueprint-gw"><b data-blueprint-capacity>~6.3 GW</b><span data-blueprint-caption>US generation brought online on<br>Unimacts transformers</span></div>
+          <div class="blueprint-stats">
+            <div><b data-blueprint-stat-value>41</b><span data-blueprint-stat-label>Projects</span></div>
+            <div><b data-blueprint-stat-value>6,273 MVA</b><span data-blueprint-stat-label>≈ 6.3 GW Capacity</span></div>
+            <div><b data-blueprint-stat-value>10</b><span data-blueprint-stat-label>US States</span></div>
+          </div>
+        </div>
+        <div class="blueprint-map" aria-label="Map of US transformer deliveries">
+          <img src="public/usa-map-dark.png" alt="Map of US transformer delivery locations" class="blueprint-map-img" data-blueprint-map>
+        </div>
+      </div>
+      <p class="blueprint-note">MVA At Top Nameplate (ONAF2) Rating; 1 MVA ≈ 1 MW Of Interconnected Capacity. 41 Transformers Across 40 Contracted Projects From The Live Register (Jul 2026) — Headwater 24 · Sandhills 6<br>(Butler County ×2) · Oriden 5 · BayWa 4 · CPV Fairview 1 · Lonestar 1 · AZ · GA · WA Positioned From Site Coordinates. One Unit (Burt 3) Is Contracted But Not Yet Rated, So Contributes No MVA.</p>
+      <img class="blueprint-logo" src="public/unimacts-logo-white.svg" alt="Unimacts, a Zetwerk company">
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 5 — TEAM
+  ══════════════════════════════════════ -->
+  <section class="team" aria-labelledby="team-heading">
+    <div class="team-container">
+      <header class="team-head"><span>THE TEAM</span><i></i></header>
+      <div class="team-summary">
+        <h2 id="team-heading">Operators from the industry's front line</h2>
+        <div><b>300+ years</b><span>Collective Transformer Design &amp;<br>Engineering Experience</span></div>
+      </div>
+      <div class="team-brands"><b>BUILT AND SHIPPED AT</b><img src="public/seimens_bw.png" alt="Siemens"><img src="public/abb_bw.png" alt="ABB"><img src="public/g_bw.png" alt="GE"><img src="public/hitachi_bw.png" alt="Hitachi"><img src="public/schneider_bw.png" alt="Schneider Electric"><img src="public/weq_bw.png" alt="WEQ"><img src="public/ford_bw.png" alt="Ford"><img src="public/pandg_bw.png" alt="P&G"><img src="public/itc_bw.png" alt="ITC"></div>
+      <div class="team-grid">
+        <article class="member"><img class="portrait" src="public/person1_bw.png" alt="Vadim Yakubov"><h3>Vadim Yakubov</h3><p>Chief Executive Officer</p><div class="previous">Previously <img src="public/ford_bw.png" alt="Ford"></div></article>
+        <article class="member"><img class="portrait" src="public/person2_bw.png" alt="Manish Arora"><h3>Manish Arora</h3><p>Chief Executive Officer</p><div class="previous">Previously <img src="public/itc_bw.png" alt="ITC"></div></article>
+        <article class="member"><img class="portrait" src="public/person3_bw.png" alt="Alex Defini"><h3>Alex Defini</h3><p>Director — Sales</p><div class="previous">Previously <img src="public/seimens_bw.png" alt="Siemens"><img src="public/abb_bw.png" alt="ABB"><img src="public/weq_bw.png" alt="WEQ"></div></article>
+        <article class="member"><img class="portrait" src="public/person4_bw.png" alt="Gopal Krishna"><h3>Gopal Krishna</h3><p>Director Of Marketing &amp; Growth</p><div class="previous is-wordmark">Previously <strong>ZETWERK</strong></div></article>
+        <article class="member"><img class="portrait" src="public/person5_bw.png" alt="Ritesh Mahor"><h3>Ritesh Mahor</h3><p>Head Of Engineering &amp; Design</p><div class="previous">Previously <img src="public/vt_bw.png" alt="VT"><img src="public/hammod_bw.png" alt="Hammond Power"></div></article>
+        <article class="member"><img class="portrait" src="public/person6_bw.png" alt="Yash Jain"><h3>Yash Jain</h3><p>Head Of Delivery</p><div class="previous">Previously <img src="public/blackbuck_bw.png" alt="Blackbuck"><img src="public/practo_bw.png" alt="Practo"></div></article>
+        <article class="member"><img class="portrait" src="public/person7_bw.png" alt="Amit Sharma"><h3>Amit Sharma</h3><p>Principal Designer —<br>Power Transformers &amp; Switchgear</p><div class="previous">Previously <img src="public/schneider_bw.png" alt="Schneider"><img src="public/vt_bw.png" alt="VT"></div></article>
+        <article class="member"><img class="portrait" src="public/person8_bw.png" alt="Atul Gondane"><h3>Atul Gondane</h3><p>Quality Manager</p><div class="previous">Previously <img src="public/hitachi_bw.png" alt="Hitachi"><img src="public/g_bw.png" alt="GE"></div></article>
+        <article class="member"><img class="portrait" src="public/person9_bw.png" alt="Sujay Shah"><h3>Sujay Shah</h3><p>Quality Manager</p><div class="previous">Previously <img src="public/g_bw.png" alt="GE"><img src="public/reliance_bw.png" alt="Reliance"></div></article>
+        <article class="member"><img class="portrait" src="public/person10_bw.png" alt="Ramya Balasubramanian"><h3>Ramya Balasubramanian</h3><p>Quality &amp; Engineering</p><div class="previous">Previously <img src="public/seimens_bw.png" alt="Siemens"><img src="public/indo_tech_bw.png" alt="Indo Tech"></div></article>
+        <article class="member"><img class="portrait" src="public/person11_bw.png" alt="Pooja Kumar"><h3>Pooja Kumar</h3><p>Head Of Supply Chain &amp;<br>Partnerships</p><div class="previous">Previously <img src="public/pandg_bw.png" alt="P&amp;G"></div></article>
+        <article class="member"><img class="portrait" src="public/person12_bw.png" alt="Amit Biswas"><h3>Amit Biswas</h3><p>Business Development<br>Manager — Renewables</p><div class="previous is-wordmark">Previously <strong>ZETWERK</strong></div></article>
+        <article class="member"><img class="portrait" src="public/person13_bw.png" alt="Rishabh Raghavender"><h3>Rishabh Raghavender</h3><p>Business Development<br>Manager — Data Centres</p><div class="previous is-wordmark">Previously <strong>ZETWERK</strong></div></article>
+      </div>
+      <div class="team-footer"><b>◢UNIMACTS</b><small>A ZETWERK COMPANY</small></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 6 — VALUE CHAIN
+  ══════════════════════════════════════ -->
+  <section class="value-chain" aria-labelledby="value-chain-heading">
+    <div class="value-chain-container">
+      <header class="value-chain-head"><span>VALUE CHAIN</span><i></i></header>
+      <h2 id="value-chain-heading">Where we sit in your project</h2>
+      <div class="chain-stages">
+        <article class="chain-stage"><svg class="stage-icon" viewBox="0 0 30 30"><path d="m19.63 24.08-9.26 4.75-9.2-4.63V1.17l9.2 4.76 9.26-4.76 9.2 4.65v23.01l-9.2-4.75Z"/><path d="m15 9.84-5.57 9.38L15 17.4l5.57 1.82L15 9.84Z"/></svg><h3>Origination &amp;<br>Development</h3><b>DEVELOPERS · IPPS</b><p>Land, interconnection, offtake,<br>tax-equity structuring.</p></article>
+        <article class="chain-stage"><svg class="stage-icon" viewBox="0 0 30 30"><path d="M20.15 18.91v10.21H1.32V4.24h5.47m7.88 0h5.47v1.32M12.65 4.24v-1.44a1.91 1.91 0 1 0-3.82 0v1.44H6.79v3.24h7.88V4.24h-2.03ZM4.15 12.76h4.47m-4.47 3.71h4.47m-4.47 3.7h13m-13 3.71h13"/><circle cx="21.77" cy="12.24" r="1.76"/><path d="m26.75 13.25 1.6.93-1.62 2.8-1.6-.93a6.7 6.7 0 0 1-1.75 1.01v1.85h-3.24v-1.85a6.7 6.7 0 0 1-1.75-1.01l-1.6.93-1.62-2.8 1.6-.93a5.3 5.3 0 0 1 0-2.02l-1.6-.93 1.62-2.8 1.6.93a6.7 6.7 0 0 1 1.75-1.01V5.56h3.24v1.85a6.7 6.7 0 0 1 1.75 1.01l1.6-.93 1.62 2.8-1.6.93a5.3 5.3 0 0 1 0 2.02Z"/></svg><h3>Engineering &amp;<br>Procurement</h3><b>OWNER'S ENGINEER · EPC</b><p>Plant design, specs &amp; POs,<br>domestic-content strategy.</p></article>
+        <article class="chain-stage is-primary"><svg class="stage-icon" viewBox="0 0 30 30"><path d="M.59 27.89h28.82v-2.34H.59v2.34Zm0-15.23h28.82v-2.34H.59v2.34ZM2.11 12.96v12.28m25.78-12.28v12.28M12.36 10.02l.83-2.5m3.62.04.82 2.46m-.83-5.13.83 2.49h-5.27l.84-2.52m-.84-.12.88-2.64h3.52l.88 2.64h-5.27Zm-9.08 5.28.83-2.5m3.62.04.82 2.46m-.83-5.13.83 2.49H3.28l.84-2.52m-.84-.12.88-2.64h3.52l.88 2.64H3.28Zm18.16 5.28.83-2.5m3.62.04.82 2.46m-.83-5.13.83 2.49h-5.27l.84-2.52m-.84-.12.88-2.64h3.52l.88 2.64h-5.27ZM15.91 15.53l3.52 6.1a1.1 1.1 0 0 1-.9 1.57h-7.06a1.1 1.1 0 0 1-.87-1.63l3.5-6.05a1.1 1.1 0 0 1 1.81.01Z"/><path d="m15.2 17.94-1.1 1.78h1.53l-1.1 1.78"/></svg><h3>Equipment<br>Manufacturing</h3><b>UNIMACTS</b><p>Transformers, switchgear, skids,<br>enclosures — with certification &amp;<br>cost documentation.</p></article>
+        <article class="chain-stage"><svg class="stage-icon" viewBox="0 0 30 30"><path d="M5.59 4.44V.89h4.76v3.55M5.59 26.22V7.91m4.77 0v18.31m0-4.34-4.77 3.5m0-6.99 4.77 3.5m0-6.99-4.77 3.5m0-6.99 4.77 3.5m0-6.97-4.77 3.48m6.01 17.72H4.35v-1.65c0-.69.56-1.24 1.24-1.24h4.77c.69 0 1.24.56 1.24 1.24v1.65ZM29.12 4.44H.88v3.47h28.24V4.44ZM10.36.89l18.76 3.55M5.59.89.88 4.44m28.23 14.72H15v7.3h14.11v-7.3Zm-6.7-11.21v3.39a1.76 1.76 0 1 0 1.76 1.76m4.94 6.05-6.68-4.3L15 19.16m14.11 0L15 26.46"/></svg><h3>Construction &amp;<br>Commissioning</h3><b>EPC · CONTRACTORS</b><p>Civil, electrical, energisation,<br>testing.</p></article>
+        <article class="chain-stage"><svg class="stage-icon" viewBox="0 0 30 30"><path d="M16.27 26.9a13.6 13.6 0 0 0 2.57-1.07l1.85 1.7 3.8-3.79-1.7-1.85c.46-.8.82-1.66 1.07-2.57l2.51-.1v-2.69h-7.03a5.86 5.86 0 1 1-5.86-5.86V3.63h-2.69l-.1 2.52c-.91.24-1.77.6-2.57 1.07L6.26 5.51l-3.8 3.8 1.7 1.85c-.46.8-.82 1.66-1.07 2.57l-2.51.1v5.38l2.52.1c.24.91.6 1.77 1.07 2.57l-1.7 1.85 3.79 3.8 1.85-1.7c.8.46 1.66.82 2.57 1.07l.1 2.51h5.38l.1-2.51ZM16.52 13.48V.59A12.89 12.89 0 0 1 29.41 13.48H16.52Z"/><path d="m22.32 5.8-.29-.12a1.06 1.06 0 1 0-.81 1.96l.29.12.29.12a1.06 1.06 0 1 1-.81 1.96l-.29-.12m.81-4.3v-.59m0 5.86v-.65"/></svg><h3>Operations &amp;<br>Asset Mgmt</h3><b>O&amp;M PROVIDERS</b><p>Monitoring, dispatch, warranty.</p></article>
+      </div>
+      <div class="power-paths">
+        <article class="power-path solar-path"><h3><svg class="path-icon solar-icon" viewBox="0 0 43 43"><path d="M20.11 32.63v2.78m2.78-2.78v2.78m2.78 2.78h-8.35v-2.78h8.35v2.78Zm3.48 4.17H13.85l.7-4.17h13.91l.7 4.17Zm-16.7 0h18.09m-10.13-2.09h4.17M6.89 32.63H3.41v-2.78h36.18v2.78H9.41M3.41 29.85 8.98 21.5h25.04l5.57 8.35M25.67 8.98a4.17 4.17 0 1 1-8.35 0 4.17 4.17 0 0 1 8.35 0ZM21.5.63v2.09m-5.9.35 1.47 1.48m-3.92 4.43h2.09m.36 5.9 1.47-1.48m4.43 3.92v-2.09m5.9-.35-1.48-1.48m3.92-4.43h-2.09m-.36-5.9-1.48 1.48M17.33 21.5l-1.86 8.35m10.2-8.35 1.86 8.35m9.28-4.17H6.19"/></svg> SOLAR PV + BESS POWER PATH</h3><div class="path-flow"><b>PV INVERTER / PCS</b><i></i><b>INVERTER-DUTY STEP-UP (SKID)</b><i></i><b>34.5 KV COLLECTION + MVS</b><i></i><b>GSU 115–345 KV</b><i></i><b>HVS / PO</b></div></article>
+        <article class="power-path data-path"><h3><svg class="path-icon data-icon" viewBox="0 0 43 43"><path d="M34.6 23.5a6.72 6.72 0 0 0 .8-13.39 9.24 9.24 0 0 0-15.63-5.83 9.24 9.24 0 0 0-12.06 5.83 6.72 6.72 0 0 0 .69 13.4H34.6Z"/><path d="M12.26 25.64h18.48m-18.48 7.84h18.48m0 7.84H12.26V17.8h18.48v23.52Z"/></svg> DATA CENTRE POWER PATH</h3><div class="path-flow"><b>UTILITY 345/138 KV</b><i></i><b>T1 STEP-DOWN</b><i></i><b>SG3 MV 13.8 KV</b><i></i><b>T3 UNIT SUB 480 V</b><i></i><b>UPS → PDU → RACK</b></div></article>
+      </div>
+      <div class="unimacts-angle"><strong>The Unimacts Angle:</strong> Under The Post-2025 US Tax Regime, Your Equipment Supplier Determines Your Credits — We Pair Every Shipment With<br>Domestic-Content Certification, Direct-Cost/BOM Transparency And FEOC-Compliant Documentation.</div>
+      <div class="value-chain-footer"><b>◢UNIMACTS</b><small>A ZETWERK COMPANY</small></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 7 — PRODUCT PORTFOLIO
+  ══════════════════════════════════════ -->
+  <section class="product-portfolio" aria-labelledby="portfolio-heading">
+    <div class="portfolio-container">
+      <header class="portfolio-head"><span>PRODUCT PORTFOLIO · SOLAR &amp; BESS</span><i></i></header>
+      <div class="portfolio-intro"><h2 id="portfolio-heading">The five units every utility-scale plant specifies</h2><p>Select any product for full specifications.</p></div>
+      <div class="product-grid">
+        <article class="product-card"><div class="product-image"><img src="public/prod1.png" alt="Generator Step-Up Transformer"></div><div class="product-detail"><b>GSU</b><h3>Generator Step-Up<br>Transformer</h3><p>34.5 → 115/230/345 kV · 50-200 MVA · OLTC</p><button type="button">VIEW SPECS <span>→</span></button></div></article>
+        <article class="product-card"><div class="product-image"><img src="public/prod2.png" alt="MV Switchgear and Reclosers"></div><div class="product-detail"><b>MVS</b><h3>MV Switchgear &amp;<br>Reclosers</h3><p>34.5 kV collection · RMU ·<br>arc-resistant</p><button type="button">VIEW SPECS <span>→</span></button></div></article>
+        <article class="product-card"><div class="product-image"><img src="public/prod3.png" alt="HV Switchgear and Breakers"></div><div class="product-detail"><b>HVS / GIS</b><h3>HV Switchgear &amp;<br>Breakers</h3><p>115-345 kV · dead-tank · AIS / GIS</p><button type="button">VIEW SPECS <span>→</span></button></div></article>
+        <article class="product-card"><div class="product-image"><img src="public/prod4.png" alt="Station-Service Auxiliary"></div><div class="product-detail"><b>AUX</b><h3>Station-Service /<br>Auxiliary</h3><p>0.5–2 MVA · house &amp; tracker power</p><button type="button">VIEW SPECS <span>→</span></button></div></article>
+        <article class="product-card"><div class="product-image"><img src="public/prod5.png" alt="Pad-Mount Distribution"></div><div class="product-detail"><b>PMT</b><h3>Pad-Mount<br>Distribution</h3><p>34.5 kV → 400/480 V · 50-2500 kVA</p><button type="button">VIEW SPECS <span>→</span></button></div></article>
+      </div>
+      <div class="portfolio-note">Plus Inverter-Duty Step-Up Skids And BESS MV Transformers Matched To PCS Blocks.</div>
+      <div class="portfolio-footer"><b>◢UNIMACTS</b><small>A ZETWERK COMPANY</small></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 8 — DATA CENTRES PORTFOLIO
+  ══════════════════════════════════════ -->
+  <section class="data-portfolio" aria-labelledby="data-portfolio-heading">
+    <div class="data-portfolio-container">
+      <header class="data-portfolio-head"><span>PRODUCT PORTFOLIO · DATA CENTRES</span><i></i></header>
+      <div class="data-portfolio-intro"><h2 id="data-portfolio-heading">Transformers, switchgear and PDUs — grid to rack.</h2><p>Generator output to server rack — select any card for details.</p></div>
+      <div class="data-product-row data-transformers">
+        <article><img src="public/prod6.png" alt="Main Step-Down"><b>T1</b><h3>Main Step-Down</h3><p>345 / 230 kV → 34.5 kV ·<br>tens of MVA</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod7.png" alt="Intermediate MV"><b>T2</b><h3>Intermediate MV</h3><p>34.5 → 13.8 kV · pad-mount</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod8.png" alt="Unit Substation"><b>T3</b><h3>Unit Substation</h3><p>13.8 kV → 480Y/277 V · to<br>5 MVA</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod9.png" alt="PDU Isolation K-Rated"><b>T4</b><h3>PDU Isolation · K-Rated</h3><p>480 V → 415/240 V ·<br>30–2000 kVA</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod10.png" alt="Station Service"><b>T5</b><h3>Station Service</h3><p>13.8 kV → 480 V · 0.5-2 MVA</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod11.png" alt="Grounding"><b>T6</b><h3>Grounding</h3><p>Zigzag · MV neutral<br>derivation</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod12.png" alt="UPS Isolation"><b>T7</b><h3>UPS Isolation</h3><p>50-1000 kVA · dry-type 1:1</p><button>VIEW SPECS →</button></article>
+      </div>
+      <div class="data-product-row data-switchgear">
+        <article><img src="public/prod13.png" alt="HV Switchgear"><b>SG1</b><h3>HV Switchgear</h3><p>345 / 230 / 138 kV · AIS<br>or GIS</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod14.png" alt="Ring Main Unit"><b>SG2</b><h3>Ring Main Unit</h3><p>12 / 24 KV · 630 A ·<br>sealed tank</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod15.png" alt="MV Metal-Clad"><b>SG3</b><h3>MV Metal-Clad</h3><p>13.8 kV · 2500 A · arc-<br>resistant</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod16.png" alt="Gen Paralleling"><b>SG4</b><h3>Gen Paralleling</h3><p>13.8 kV · sync &amp; load<br>share</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod17.png" alt="Transfer ATS STS"><b>SG5</b><h3>Transfer ATS / STS</h3><p>480 V · &lt;100 ms · STS<br>&lt;4 ms</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod18.png" alt="LV Switchgear"><b>SG6</b><h3>LV Switchgear</h3><p>480 V · to 6000 A ·<br>Form 3B/4</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod19.png" alt="MCC"><b>SG7</b><h3>Gen Boards + MCC</h3><p>480 V · MCC &amp; VFD<br>lineups</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod20.png" alt="Critical Distribution"><b>SG8</b><h3>Critical Distribution</h3><p>480 V · UL 891 · maint.<br>bypass</p><button>VIEW SPECS →</button></article>
+        <article><img src="public/prod21.png" alt="Remote Power Panels"><b>SG9</b><h3>Remote Power<br>Panels</h3><p>415 / 240 V · UL 67<br>branch</p><button>VIEW SPECS →</button></article>
+      </div>
+      <div class="data-portfolio-footer"><b>◢UNIMACTS</b><small>A ZETWERK COMPANY</small></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 9 — LEAD TIMES
+  ══════════════════════════════════════ -->
+  <section class="lead-times" aria-labelledby="lead-times-heading">
+    <div class="lead-times-container">
+      <header class="lead-times-head"><span>LEAD TIMES</span><i></i></header>
+      <h2 id="lead-times-heading">Infrastructure off your critical path</h2>
+      <div class="lead-legend"><span><i class="red-key"></i>Unimacts</span><span><i class="gray-key"></i>Industry (Jul 2026 market)</span></div>
+      <div class="lead-table">
+        <article class="lead-row"><div><h3>Power / GSU Transformers</h3><p>115–345 kV class</p></div><div class="lead-bars" style="--unimacts: 68%; --market: 100%"></div><div class="lead-result"><b>12–24 mo</b><strong>35–60% FASTER</strong><span>market avg 33–37 mo</span></div></article>
+        <article class="lead-row"><div><h3>HV Switchgear &amp; Breakers</h3><p>115–345 kV · AIS / GIS</p></div><div class="lead-bars" style="--unimacts: 36%; --market: 54%"></div><div class="lead-result"><b>36–42 wks</b><strong>~23% FASTER</strong><span>market avg ~52 wks</span></div></article>
+        <article class="lead-row"><div><h3>MV Switchgear · RMU · Paralleling</h3><p>13.8–36 kV</p></div><div class="lead-bars" style="--unimacts: 25%; --market: 31%"></div><div class="lead-result"><b>31–35 wks</b><strong>~23% FASTER</strong><span>market avg 44 wks</span></div></article>
+        <article class="lead-row"><div><h3>LV Switchgear &amp; Transfer Gear</h3><p>480 V · ATS / STS</p></div><div class="lead-bars" style="--unimacts: 36%; --market: 46%"></div><div class="lead-result"><b>38–43 wks</b><strong>~24% FASTER</strong><span>market avg 54 wks</span></div></article>
+        <article class="lead-row"><div><h3>Switchboards &amp; MCCs</h3><p>480 V · UL 891 / 845</p></div><div class="lead-bars" style="--unimacts: 29%; --market: 39%"></div><div class="lead-result"><b>23–33 wks</b><strong>~22% FASTER</strong><span>market avg 32–41 wks</span></div></article>
+        <article class="lead-row"><div><h3>Dry-Type &amp; Cast-Resin</h3><p>PDU · UPS isolation</p></div><div class="lead-bars" style="--unimacts: 39%; --market: 46%"></div><div class="lead-result"><b>35–40 wks</b><strong>~23% FASTER</strong><span>market avg ~50 wks</span></div></article>
+        <article class="lead-row"><div><h3>Distribution &amp; Pad-Mount</h3><p>≤ 10 MVA · 34.5 kV</p></div><div class="lead-bars" style="--unimacts: 23%; --market: 30%"></div><div class="lead-result"><b>21–24 wks</b><strong>~23% FASTER</strong><span>market avg 30 wks</span></div></article>
+        <article class="lead-row"><div><h3>Panelboards / RPP</h3><p>415 / 240 V · UL 67</p></div><div class="lead-bars" style="--unimacts: 25%; --market: 30%"></div><div class="lead-result"><b>15–26 wks</b><strong>~22% FASTER</strong><span>market avg 21–32 wks</span></div></article>
+      </div>
+      <p class="lead-note">Market averages from the <b>Wood Mackenzie T&amp;D supply-chain survey</b>, Siemens' published ComPAS schedules, NEMA and IEA, aggregated Jul 2026. Every category is quoted <b>20–30% inside the market average</b> —<br>power transformers faster still, because plant capacity is contracted ahead of your order rather than bid for after it.</p>
+      <div class="lead-times-footer"><b>◢UNIMACTS</b><small>A ZETWERK COMPANY</small></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECTION 10 — CONTACT
+  ══════════════════════════════════════ -->
+  <section class="contact" aria-labelledby="contact-heading">
+    <div class="contact-container">
+      <header class="contact-head"><span>CONTACT</span><i></i></header>
+      <img class="contact-logo" src="public/unimacts-logo-white.svg" alt="Unimacts, a Zetwerk company">
+      <h2 id="contact-heading">Tell us your energisation date.</h2>
+      <p class="contact-intro">We will come back with the manufacturing plan that gets you there — plant allocation, test-bay<br>slots and a delivery sequence mapped to your milestone dates.</p>
+      <div class="contact-cards">
+        <article class="contact-card"><b>BUSINESS HEAD —<br>TRANSFORMERS &amp; SWITCHGEAR</b><h3>Manish Arora</h3><a href="mailto:manish.arora@unimacts.com"><span>✉</span>manish.arora@unimacts.com</a><a href="tel:+919100937547"><span>⌕</span>+91 91009 37547</a></article>
+        <article class="contact-card"><b>DIRECTOR —<br>SALES &amp; MARKETING</b><h3>Gopal Krishna</h3><a href="mailto:gopal@unimacts.com"><span>✉</span>gopal@unimacts.com</a><a href="tel:+12485159883"><span>⌕</span>+1 (248) 515-9883</a></article>
+        <article class="contact-card headquarters"><b>HEADQUARTERS</b><h3>Unimacts Global</h3><a href="https://maps.google.com/?q=14600+Arville+Street,+Sloan,+NV+89054"><span>⌖</span>14600 Arville Street, Sloan, NV 89054</a><a href="https://www.unimacts.com"><span>◎</span>www.unimacts.com</a></article>
+      </div>
+      <div class="contact-bottom"><div class="contact-stats"><div><b>~6.3 GW</b><span>US Capacity Delivered</span></div><div><b>7 plants</b><span>17,666 MVA Per Year</span></div><div><b>12–24 mo</b><span>Power Tx Vs 33–37 Mo Market</span></div></div><a class="contact-cta" href="mailto:info@unimacts.com?subject=Energisation%20date%20planning">Start a conversation <span>→</span></a></div>
+      <img class="contact-footer-logo" src="public/unimacts-logo-white.svg" alt="Unimacts">
+    </div>
+  </section>
+
+  <script>
+  (() => {
+    // ── Dot navigation ──
+    const SECTION_SELECTORS = [
+      '.hero', '.presence', '.customers', '.gw-blueprint', '.team',
+      '.value-chain', '.product-portfolio', '.data-portfolio', '.lead-times', '.contact'
+    ];
+
+    // Keep nulls so dot index always matches SECTION_SELECTORS index
+    const sectionEls = SECTION_SELECTORS.map(s => document.querySelector(s));
+    const dots = document.querySelectorAll('.dot-nav .dot');
+    const dotNav = document.querySelector('.dot-nav');
+
+    // Sections with a light (white) background
+    const LIGHT_BG = new Set([
+      '.presence', '.customers', '.team',
+      '.value-chain', '.product-portfolio', '.data-portfolio', '.lead-times'
+    ]);
+
+    const arrowNav  = document.querySelector('.arrow-nav');
+    const btnPrev   = document.getElementById('nav-prev');
+    const btnNext   = document.getElementById('nav-next');
+    let currentIdx  = 0;
+
+    function setActiveDot(index) {
+      currentIdx = index;
+      dots.forEach((d, i) => d.classList.toggle('is-active', i === index));
+      const isLight = LIGHT_BG.has(SECTION_SELECTORS[index]);
+      dotNav.classList.toggle('on-light', isLight);
+      if (arrowNav) arrowNav.classList.toggle('on-light', isLight);
+      if (btnPrev) btnPrev.disabled = index === 0;
+      if (btnNext) btnNext.disabled = index === sectionEls.length - 1;
+    }
+
+    if (btnPrev) btnPrev.addEventListener('click', () => {
+      const target = sectionEls[currentIdx - 1];
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    if (btnNext) btnNext.addEventListener('click', () => {
+      const target = sectionEls[currentIdx + 1];
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Click → scroll to that section (guard against missing section)
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        const el = sectionEls[i];
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Track active section via IntersectionObserver
+    const dotObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const idx = sectionEls.indexOf(entry.target);
+          if (idx !== -1) setActiveDot(idx);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    // Only observe sections that actually exist in the DOM
+    sectionEls.forEach(el => { if (el) dotObserver.observe(el); });
+    setActiveDot(0);
+  })();
+
+  (() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const STAGGER = 140; // ms between each item
+
+    // Per-section: ordered list of selectors to reveal one by one
+    const CONFIG = [
+      {
+        sel: '.hero',
+        items: ['.hero-header', '.hero-heading', '.hero-desc', '.stat', '.transformer-img', '.bottom-logo']
+      },
+      {
+        sel: '.presence',
+        items: ['.section-head', 'h1', '.unimacts-card', '.zetwerk-card']
+      },
+      {
+        sel: '.customers',
+        items: ['.customers-head', '.customers-intro', '.customer-row']
+      },
+      {
+        sel: '.gw-blueprint',
+        items: ['.blueprint-head', 'h2', '.blueprint-tabs', '.blueprint-gw', '.blueprint-stats', '.blueprint-map']
+      },
+      {
+        sel: '.team',
+        items: ['.team-head', '.team-summary', '.team-brands', '.team-grid']
+      },
+      {
+        sel: '.value-chain',
+        items: ['.value-chain-head', 'h2', '.chain-stages', '.power-paths', '.unimacts-angle']
+      },
+      {
+        sel: '.product-portfolio',
+        items: ['.portfolio-head', '.portfolio-intro', '.product-grid', '.portfolio-note']
+      },
+      {
+        sel: '.data-portfolio',
+        items: ['.data-portfolio-head', '.data-portfolio-intro', '.data-transformers', '.data-switchgear']
+      },
+      {
+        sel: '.lead-times',
+        items: ['.lead-times-head', 'h2', '.lead-legend', '.lead-table', '.lead-note']
+      },
+      {
+        sel: '.contact',
+        items: ['.contact-head', 'h2', '.contact-intro', '.contact-cards', '.contact-bottom']
+      },
+    ];
+
+    // Build map: section el → ordered array of reveal elements
+    const sectionMap = new Map();
+
+    CONFIG.forEach(({ sel, items }) => {
+      const section = document.querySelector(sel);
+      if (!section) return;
+
+      const seen = new Set();
+      const revealEls = [];
+
+      items.forEach(itemSel => {
+        section.querySelectorAll(itemSel).forEach(el => {
+          if (!seen.has(el)) {
+            seen.add(el);
+            el.classList.add('reveal');
+            revealEls.push(el);
+          }
+        });
+      });
+
+      sectionMap.set(section, revealEls);
+    });
+
+    let pendingTimers = [];
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        const els = sectionMap.get(entry.target);
+        if (!els) return;
+
+        if (entry.isIntersecting) {
+          // Cancel any in-flight timers from the previous section
+          pendingTimers.forEach(clearTimeout);
+          pendingTimers = [];
+
+          // Stagger-reveal each element
+          els.forEach((el, i) => {
+            pendingTimers.push(
+              setTimeout(() => el.classList.add('is-visible'), i * STAGGER)
+            );
+          });
+        } else {
+          // Hide elements so the animation replays on re-entry
+          els.forEach(el => el.classList.remove('is-visible'));
+        }
+      });
+    }, { threshold: 0.45 });
+
+    sectionMap.forEach((_, section) => observer.observe(section));
+  })();
+
+  (() => {
+    const blueprint = document.querySelector('.gw-blueprint');
+    if (!blueprint) return;
+
+    const views = {
+      deliver: {
+        src: 'public/usa-map-dark.png',
+        alt: 'Map of US transformer deliveries',
+        label: 'Map of US transformer deliveries',
+        capacity: '~6.3 GW',
+        caption: 'US generation brought online on<br>Unimacts transformers',
+        stats: [['41', 'Projects'], ['6,273 MVA', '≈ 6.3 GW Capacity'], ['10', 'US States']]
+      },
+      build: {
+        src: 'public/asia.png',
+        alt: 'Map of Unimacts manufacturing capacity across India, the UAE, and Oman',
+        label: 'Map of Unimacts manufacturing capacity across India, the UAE, and Oman',
+        capacity: '17,666MVA',
+        caption: 'annual capacity across India, the UAE<br>and Oman',
+        stats: [['7', 'Transformer Plants'], ['3', 'Countries —<br>India · UAE · Oman'], ['17,666 MVA', 'Annual Manufacturing Capacity']]
+      }
+    };
+
+    const map = blueprint.querySelector('[data-blueprint-map]');
+    const capacity = blueprint.querySelector('[data-blueprint-capacity]');
+    const caption = blueprint.querySelector('[data-blueprint-caption]');
+    const statValues = blueprint.querySelectorAll('[data-blueprint-stat-value]');
+    const statLabels = blueprint.querySelectorAll('[data-blueprint-stat-label]');
+
+    blueprint.querySelectorAll('[data-blueprint-view]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const view = views[button.dataset.blueprintView];
+        if (!view) return;
+
+        blueprint.querySelectorAll('[data-blueprint-view]').forEach((tab) => {
+          const active = tab === button;
+          tab.classList.toggle('is-active', active);
+          tab.setAttribute('aria-selected', String(active));
+        });
+
+        map.src = view.src;
+        map.alt = view.alt;
+        map.parentElement.setAttribute('aria-label', view.label);
+        capacity.textContent = view.capacity;
+        caption.innerHTML = view.caption;
+        view.stats.forEach(([value, label], index) => {
+          statValues[index].textContent = value;
+          statLabels[index].innerHTML = label;
+        });
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
