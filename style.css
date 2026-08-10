@@ -273,7 +273,7 @@ body > section { scroll-snap-align: start; scroll-snap-stop: always; }
 ══════════════════════════════════════ */
 
 .presence { min-height: 100vh; padding: 46px 0 38px; overflow: hidden; background: #fff; position: relative; color: #070707; }
-.presence::after { content: ""; position: absolute; right: -1%; top: -19%; width: 43%; height: 66%; opacity: .13; background: repeating-linear-gradient(95deg, transparent 0 75px, #ff0000 76px 77px, transparent 78px 130px), repeating-linear-gradient(8deg, transparent 0 58px, #ff0000 59px 60px, transparent 61px 96px); clip-path: polygon(6% 0,100% 0,100% 84%,91% 86%,89% 72%,75% 67%,70% 82%,61% 71%,52% 77%,46% 66%,37% 82%,25% 73%,17% 89%,0 73%); pointer-events: none; }
+.presence::after { content: ""; position: absolute; right: -1%; top: -10%; width: 45%; height: 66%; opacity: 1; background: url('public/bg_map_us.png') right top / contain no-repeat; pointer-events: none; }
 .container { width: 95%; max-width: 1339px; margin: auto; position: relative; z-index: 1; }
 .section-head { display: flex; align-items: center; gap: 27px; font-size: 24px; line-height: 1; font-weight: 700; margin: 1px 0 30px; }
 .section-head i { height: 2px; flex: 1; background: #ed1017; }
@@ -290,7 +290,7 @@ body > section { scroll-snap-align: start; scroll-snap-stop: always; }
 .metric, .zmetric { display: flex; align-items: center; min-width: 0; gap: 9px; }
 .metric svg, .zmetric svg { flex: 0 0 39px; width: 39px; height: 39px; fill: none; stroke: currentColor; stroke-width: 1; }
 .metric { color: #fb0a0a; }
-.metric.people svg { flex-basis: 39px; width: 45px; }
+.metric.people svg { flex-basis: 44px; width: 44px; height: 32px; margin-left: -6px; margin-top: -6px; }
 .metric div, .zmetric div { color: #090909; display: flex; flex-direction: column; min-width: 0; }
 .metric b, .zmetric b { font-size: 29px; font-weight: 500; line-height: 1.05; letter-spacing: -1px; white-space: nowrap; }
 .metric span, .zmetric span { font-size: 14px; line-height: 1.15; white-space: nowrap; }
@@ -298,9 +298,9 @@ body > section { scroll-snap-align: start; scroll-snap-stop: always; }
 .story-list li { border-bottom: 1px solid #c9c9c9; padding: 12px 0 11px 23px; font-size: 14px; line-height: 1.35; position: relative; }
 .story-list li::before { content: ""; position: absolute; width: 12px; height: 12px; border-radius: 50%; background: #ff0911; left: 0; top: 15px; }
 .zetwerk-card { color: white; background: #040c3c; overflow: hidden; padding: 31px 19px 18px; }
-.zetwerk-name { font-size: 25px; font-weight: 800; letter-spacing: -1.4px; position: relative; z-index: 1; }
+.zetwerk-name { font-size: 25px; font-weight: 800; letter-spacing: -1.4px; position: relative; z-index: 1; margin-top: -15px; }
 .zetwerk-name sup { font-size: 11px; position: relative; top: -12px; left: 1px; }
-.zetwerk-card h2 { color: #d2e823; margin: 18px 0 20px; font-size: 14px; position: relative; z-index: 1; }
+.zetwerk-card h2 { color: #d2e823; margin: 27px 0 20px; font-size: 14px; position: relative; z-index: 1; }
 .watermark { position: absolute; width: 205px; height: 205px; border: 13px solid #202957; border-radius: 50%; right: 0; top: -122px; }
 .watermark::before, .watermark::after { content: ""; position: absolute; border: 12px solid #202957; border-radius: 50%; inset: 18px; }
 .watermark::after { inset: 55px; }
@@ -314,7 +314,15 @@ body > section { scroll-snap-align: start; scroll-snap-stop: always; }
 .zetwerk-list li::before { content: "◎"; color: #d2e823; position: absolute; left: 0; top: 10px; font-size: 17px; }
 .backed { margin-top: 20px; color: #8f96b5; font-size: 14px; }
 .backed > b { display: block; margin-bottom: 11px; }
-.backed div { display: flex; align-items: center; justify-content: space-between; color: #9da3b9; }
+.backed div { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.backed div img { object-fit: contain; opacity: 0.85; }
+.backed div img:nth-child(1) { width: 99px !important; height: 33px !important; aspect-ratio: 3/1; }        /* khosla ventures */
+.backed div img:nth-child(2) { width: 89.674px !important; height: 12.913px !important; aspect-ratio: 125/18; } /* Greenoaks */
+.backed div img:nth-child(3) { width: 49.462px !important; height: 16.391px !important; aspect-ratio: 49.46/16.39; } /* Accel */
+.backed div img:nth-child(4) { width: 57.444px !important; height: 25.838px !important; aspect-ratio: 57.44/25.84; } /* Peak XV */
+.backed div img:nth-child(5) { width: 82.578px !important; height: 20.778px !important; aspect-ratio: 155/39; }  /* Lightspeed */
+.backed div img:nth-child(6) { width: 50.217px !important; height: 21.522px !important; aspect-ratio: 7/3; }   /* D1 Capital */
+.backed div img:nth-child(7) { width: 58.222px !important; height: 16.011px !important; aspect-ratio: 40/11; } /* Avenir */
 .backed span { font-family: Georgia, serif; font-size: 16px; font-weight: 600; }
 .backed span:first-child { font-family: Inter, sans-serif; font-size: 12px; font-weight: 400; }
 .backed small { font-size: 7px; line-height: 1; }
