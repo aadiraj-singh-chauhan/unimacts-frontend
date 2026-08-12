@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details – Unimacts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Standalone Product Page Specific Styles */
+    body {
+      background: #fff;
+      color: #111;
+      font-family: Inter, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+    }
+
+    .product-standalone {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 40px 60px;
+      box-sizing: border-box;
+    }
+
+    .ps-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 18px;
+      border-bottom: 1px solid #e0e0e0;
+      margin-bottom: 40px;
+    }
+
+    .ps-back {
+      background: #FF0000;
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      font: 700 13px/1 Inter, sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.15s;
+    }
+
+    .ps-back:hover {
+      background: #d00000;
+    }
+
+    .ps-nav {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .ps-nav-btn {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 9px 18px;
+      font: 700 12px/1 Inter, sans-serif;
+      cursor: pointer;
+      color: #000;
+      text-transform: uppercase;
+      transition: background 0.15s;
+    }
+
+    .ps-nav-btn:hover:not(:disabled) {
+      background: #e5e5e5;
+    }
+
+    .ps-nav-btn:disabled {
+      opacity: 0.35;
+      cursor: default;
+    }
+
+    .ps-counter {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding: 9px 16px;
+      font: 500 13px/1 Inter, sans-serif;
+      color: #333;
+      white-space: nowrap;
+      background: #fff;
+    }
+
+    .ps-body {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .ps-image-wrap {
+      flex: 0 0 500px;
+      width: 500px;
+      height: 460px;
+      background: #fafafa;
+      border: 1px solid #e8e8e8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      box-sizing: border-box;
+    }
+
+    .ps-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .ps-details {
+      flex: 1;
+      max-width: 540px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ps-code {
+      font: 700 13px/1 Inter, sans-serif;
+      letter-spacing: 0.06em;
+      color: #FF0000;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .ps-name {
+      font: 700 36px/1.1 Inter, sans-serif;
+      color: #000;
+      margin-bottom: 16px;
+    }
+
+    .ps-desc {
+      font: 400 15px/1.5 Inter, sans-serif;
+      color: #444;
+      margin-bottom: 28px;
+    }
+
+    .ps-specs {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 28px;
+    }
+
+    .ps-specs tr {
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .ps-specs tr:last-child {
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .ps-spec-label {
+      font: 700 13.5px/1.3 Inter, sans-serif;
+      color: #000;
+      padding: 12px 16px 12px 0;
+      width: 140px;
+      vertical-align: top;
+    }
+
+    .ps-spec-val {
+      font: 400 13.5px/1.4 Inter, sans-serif;
+      color: #444;
+      padding: 12px 0;
+    }
+
+    .ps-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .ps-tag {
+      background: #f4f4f4;
+      border: 1px solid #ddd;
+      padding: 7px 14px;
+      font: 700 11px/1 Inter, sans-serif;
+      letter-spacing: 0.04em;
+      color: #222;
+      text-transform: uppercase;
+    }
+
+    .ps-lead {
+      display: inline-block;
+      width: fit-content;
+      background: #FF0000;
+      padding: 12px 22px;
+      font: 700 14px/1 Inter, sans-serif;
+      color: #fff;
+    }
+
+    .ps-nav-bottom {
+      display: none;
+    }
+
+    /* Mobile RWD Rules */
+    @media (max-width: 768px) {
+      .product-standalone {
+        padding: 16px 16px 40px;
+      }
+
+      .ps-header {
+        padding-bottom: 12px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ebebeb;
+      }
+
+      .ps-back {
+        padding: 10px 16px;
+        font-size: 13px;
+      }
+
+      .ps-body {
+        flex-direction: column;
+        gap: 20px;
+        align-items: stretch;
+      }
+
+      .ps-image-wrap {
+        width: 100%;
+        height: 260px;
+        flex: none;
+        padding: 16px;
+        border: none;
+      }
+
+      .ps-details {
+        max-width: 100%;
+      }
+
+      .ps-name {
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+
+      .ps-desc {
+        font-size: 13px;
+        margin-bottom: 20px;
+      }
+
+      .ps-specs {
+        margin-bottom: 20px;
+      }
+
+      .ps-spec-label {
+        font-size: 13px;
+        width: 40%;
+      }
+
+      .ps-spec-val {
+        font-size: 13px;
+        width: 60%;
+      }
+
+      .ps-tags {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        margin-bottom: 20px;
+      }
+
+      .ps-tag {
+        text-align: center;
+        justify-content: center;
+        padding: 10px 8px;
+        border: none;
+      }
+
+      .ps-lead {
+        display: block;
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+      }
+
+      .ps-nav-bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        border-top: 1px solid #ebebeb;
+        margin-top: 10px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="product-standalone">
+    <header class="ps-header">
+      <a class="ps-back" href="index.html">← Back to deck</a>
+    </header>
+
+    <main class="ps-body">
+      <div class="ps-image-wrap">
+        <img class="ps-image" id="ps-image" src="" alt="" />
+      </div>
+      <div class="ps-details">
+        <span class="ps-code" id="ps-code"></span>
+        <h2 class="ps-name" id="ps-name"></h2>
+        <p class="ps-desc" id="ps-desc"></p>
+        <table class="ps-specs" id="ps-specs"></table>
+        <div class="ps-tags" id="ps-tags"></div>
+        <div class="ps-lead" id="ps-lead"></div>
+
+        <nav class="ps-nav ps-nav-bottom">
+          <button class="ps-nav-btn" id="ps-prev-bottom">← Prev</button>
+          <span class="ps-counter" id="ps-counter-bottom">1 / 21</span>
+          <button class="ps-nav-btn" id="ps-next-bottom">Next →</button>
+        </nav>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const PRODUCTS = [
+        {
+          code: 'GSU', name: 'Generator Step-Up\nTransformer', category: 'SOLAR & BESS',
+          desc: 'The plant\'s gateway to the grid — steps 34.5 kV collection voltage up to transmission level at the project substation. Engineered per project, with the schedule certainty interconnection dates demand.',
+          specs: [
+            ['Rating', '50–200 MVA typical (range to 500 MVA)'],
+            ['Voltage class', '115 / 230 / 345 kV (765 kV capable)'],
+            ['Cooling', 'ONAN / ONAF · mineral oil II or natural ester'],
+            ['Tap changer', 'OLTC ±10% in 0.625% steps with RTCC'],
+            ['Windings', 'Copper'],
+            ['Standards', 'IEEE C57.12.00-2021 · ANSI · IEC 60076'],
+          ],
+          tags: ['UTILITY SOLAR', 'BESS', 'GAS & THERMAL', 'SUBSTATIONS'],
+          lead: 'Lead time 12–24 months · market 33–37 mo',
+          img: 'public/prod_big.png'
+        },
+        {
+          code: 'MVS', name: 'MV Switchgear &\nReclosers', category: 'SOLAR & BESS',
+          desc: 'Collection-system switching and protection at 34.5 kV — RMU loops, arc-resistant lineups and reclosers with IEC 61850 communication for full SCADA integration.',
+          specs: [
+            ['Voltage', '34.5 kV collection system'],
+            ['Configuration', 'RMU, arc-resistant, load-break'],
+            ['Interrupting', 'Vacuum or SF₆ · 25 kA'],
+            ['Protection', 'IED relay · IEC 61850 / DNP3 SCADA ready'],
+            ['Enclosure', 'NEMA 3R · stainless hardware'],
+            ['Standards', 'IEEE C37 · IEC 62271'],
+          ],
+          tags: ['UTILITY SOLAR', 'BESS'],
+          lead: 'Lead time 14–20 months · market 24–30 mo',
+          img: 'public/prod_big2.png'
+        },
+        {
+          code: 'HVS / GIS', name: 'HV Switchgear &\nBreakers', category: 'SOLAR & BESS',
+          desc: 'Transmission-level interruption from 115 to 345 kV in dead-tank or GIS configurations — engineered to match interconnection queue requirements and site footprint constraints.',
+          specs: [
+            ['Voltage', '115–345 kV'],
+            ['Type', 'Dead-tank · AIS / GIS'],
+            ['Interrupting', '40–63 kA · 3-cycle'],
+            ['Operation', 'Motor-operated · spring-charged mechanism'],
+            ['Monitoring', 'SF₆ density, partial discharge optional'],
+            ['Standards', 'IEEE C37.06 · IEC 62271-100'],
+          ],
+          tags: ['UTILITY SOLAR', 'GAS & THERMAL', 'SUBSTATIONS'],
+          lead: 'Lead time 18–26 months · market 30–40 mo',
+          img: 'public/prod_big3.png'
+        },
+        {
+          code: 'AUX', name: 'Station-Service /\nAuxiliary', category: 'SOLAR & BESS',
+          desc: 'House power for inverter skids, tracker drives and plant controls — compact pad-mount or unit-substation packages pre-tested and ready to drop on concrete pads.',
+          specs: [
+            ['Rating', '0.5–2 MVA'],
+            ['Primary', '34.5 kV or 13.8 kV'],
+            ['Secondary', '480Y/277 V or 208Y/120 V'],
+            ['Type', 'Pad-mount or unit-substation'],
+            ['Windings', 'Copper · aluminum available'],
+            ['Standards', 'IEEE C57.12.20 · ANSI'],
+          ],
+          tags: ['UTILITY SOLAR', 'BESS', 'SUBSTATIONS'],
+          lead: 'Lead time 8–14 months · market 16–24 mo',
+          img: 'public/prod_big4.png'
+        },
+        {
+          code: 'PMT', name: 'Pad-Mount\nDistribution', category: 'SOLAR & BESS',
+          desc: 'Step-up transformers at each solar inverter or BESS container — loop-feed, radial, vegetable oil (FR3) options for environmental compliance.',
+          specs: [
+            ['Rating', '1–5 MVA'],
+            ['Primary', '34.5 kV'],
+            ['Secondary', '600 V / 800 V / 1.5 kV'],
+            ['Fluid', 'FR3 natural ester / mineral oil'],
+            ['Protection', 'Bay-O-Net, current-limiting fuses'],
+            ['Standards', 'IEEE C57.12.34 · ANSI'],
+          ],
+          tags: ['UTILITY SOLAR', 'BESS'],
+          lead: 'Lead time 10–16 months · market 20–28 mo',
+          img: 'public/prod_big5.png'
+        },
+        {
+          code: 'IDC', name: 'Inverter Duty\nTransformers', category: 'SOLAR & BESS',
+          desc: 'Multi-winding transformers designed for non-linear harmonic loads from central PV inverters — electrostatic shielding, heavy copper windings and custom voltage taps.',
+          specs: [
+            ['Rating', '2.5–7.5 MVA'],
+            ['Winding config', '3-winding or 4-winding (split LV)'],
+            ['Primary', '34.5 kV'],
+            ['Secondary', '600 V–1.5 kV inverter outputs'],
+            ['Shielding', 'Electrostatic shield between HV & LV'],
+            ['Standards', 'IEEE C57.159 · IEC 60076-16'],
+          ],
+          tags: ['UTILITY SOLAR'],
+          lead: 'Lead time 12–18 months · market 24–32 mo',
+          img: 'public/prod_big6.png'
+        },
+        {
+          code: 'BXT', name: 'BESS Coupling\nTransformers', category: 'SOLAR & BESS',
+          desc: 'Bidirectional power flow transformers engineered for rapid ramp-rate thermal cycling in battery storage systems — reinforced mechanical clamping and low-loss core steel.',
+          specs: [
+            ['Rating', '2–6 MVA'],
+            ['Duty', 'Bi-directional charge / discharge'],
+            ['Thermal class', '65°C rise / 80°C hot-spot rating'],
+            ['Fluid', 'Synthetic ester / FR3 / mineral oil'],
+            ['Taps', 'DETC ±2 × 2.5%'],
+            ['Standards', 'IEEE C57.12.00 · IEC 60076'],
+          ],
+          tags: ['BESS'],
+          lead: 'Lead time 10–16 months · market 22–30 mo',
+          img: 'public/prod_big7.png'
+        },
+        {
+          code: 'CAB', name: 'Medium Voltage\nCable & Bus', category: 'SOLAR & BESS',
+          desc: '34.5 kV feeder cables, junction boxes and rigid busbar systems connecting inverter skids to the project substation — EPR / XLPE insulation with aluminum or copper conductors.',
+          specs: [
+            ['Voltage', '35 kV MV distribution'],
+            ['Conductor', 'Copper or aluminum (MV-105)'],
+            ['Insulation', 'EPR or TR-XLPE 133% insulation level'],
+            ['Shielding', '5 mil copper tape / concentric neutral'],
+            ['Jacket', 'PVC / PE sunlight-resistant'],
+            ['Standards', 'ICEA S-94-649 · AEIC CS8 · UL 1072'],
+          ],
+          tags: ['UTILITY SOLAR', 'BESS', 'SUBSTATIONS'],
+          lead: 'Lead time 6–10 months · market 14–20 mo',
+          img: 'public/prod_big8.png'
+        },
+        {
+          code: 'GSU-D', name: 'Generator Step-Up\n(Data Centre)', category: 'DATA CENTRES',
+          desc: 'Dedicated high-reliability step-up transformers connecting hyperscale campus substations to utility 115–345 kV lines — engineered for zero unscheduled downtime.',
+          specs: [
+            ['Rating', '100–300 MVA'],
+            ['Primary', '115 / 230 / 345 kV'],
+            ['Secondary', '34.5 kV or 13.8 kV distribution'],
+            ['Redundancy', 'N+1 / N+2 design alignment'],
+            ['Noise level', 'Reduced sound levels (<65 dB available)'],
+            ['Standards', 'IEEE C57.12.00 · ANSI'],
+          ],
+          tags: ['DATA CENTRES', 'SUBSTATIONS'],
+          lead: 'Lead time 14–22 months · market 30–38 mo',
+          img: 'public/prod_big9.png'
+        },
+        {
+          code: 'DRY', name: 'Cast Resin Dry-Type\nTransformers', category: 'DATA CENTRES',
+          desc: 'Indoor white-space power distribution transformers — epoxy cast resin insulation eliminates fire hazard, liquid leaks and toxic fumes inside server halls.',
+          specs: [
+            ['Rating', '500 kVA – 5 MVA'],
+            ['Voltage', '15 kV / 34.5 kV primary · 480 V secondary'],
+            ['Enclosure', 'NEMA 1 / NEMA 3R ventilated'],
+            ['Class', 'Class H (180°C) / F (155°C)'],
+            ['Fire rating', 'F1 fire behavior / C2 climatic class'],
+            ['Standards', 'IEEE C57.12.01 · IEC 60076-11'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 6–12 months · market 14–22 mo',
+          img: 'public/prod_big10.png'
+        },
+        {
+          code: 'PDU', name: 'Power Distribution\nUnits (PDU)', category: 'DATA CENTRES',
+          desc: 'Precision server-rack power conditioning and monitoring units — integrated isolation transformer, static switch, branch circuit monitoring and intelligent RPP outputs.',
+          specs: [
+            ['Rating', '100–800 kVA'],
+            ['Input', '480 V 3-phase'],
+            ['Output', '208Y/120 V or 415Y/240 V'],
+            ['Monitoring', 'Individual breaker metering · Modbus/SNMP'],
+            ['Efficiency', 'DOE 2016 high-efficiency core'],
+            ['Standards', 'UL 60950-1 · UL 891 · NFPA 70'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 4–8 months · market 12–18 mo',
+          img: 'public/prod_big11.png'
+        },
+        {
+          code: 'STS', name: 'Static Transfer\nSwitches', category: 'DATA CENTRES',
+          desc: 'Sub-cycle transfer switches providing seamless transfer between two independent AC sources for dual-corded server redundancy.',
+          specs: [
+            ['Rating', '100–1200 A'],
+            ['Transfer time', '<4 ms (quarter cycle)'],
+            ['Voltage', '208 V / 480 V 3-phase'],
+            ['Topology', 'SCR solid-state switching'],
+            ['Communication', 'Dual Ethernet · SNMP · Modbus TCP'],
+            ['Standards', 'UL 1008S · IEC 62310'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 4–8 months · market 10–16 mo',
+          img: 'public/prod_big12.png'
+        },
+        {
+          code: 'UPS', name: 'Uninterruptible Power\nSupply Systems', category: 'DATA CENTRES',
+          desc: 'Hyperscale modular double-conversion UPS systems — high-density VFR topology with lithium-ion battery cabinet integration for continuous mission-critical uptime.',
+          specs: [
+            ['Rating', '500 kW – 2.5 MW per module'],
+            ['Efficiency', 'Up to 99% in ECO mode / 97% double-conv.'],
+            ['Battery', 'Li-ion or VRLA cabinet compatible'],
+            ['Parallel', 'Up to 8 modules (20 MW capacity)'],
+            ['Standards', 'UL 1778 · IEC 62040'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 8–14 months · market 18–26 mo',
+          img: 'public/prod_big13.png'
+        },
+        {
+          code: 'BUS', name: 'High-Current Busway\n& Trackway', category: 'DATA CENTRES',
+          desc: 'Overhead plug-in busway for flexible server rack power distribution — continuous open-channel track design allows instant tap-off box repositioning.',
+          specs: [
+            ['Rating', '800–5000 A'],
+            ['Conductor', '100% copper or aluminum'],
+            ['Voltage', 'Up to 600 V AC'],
+            ['Short circuit', 'Up to 100 kA RMS symmetrical'],
+            ['Standards', 'UL 857 · IEC 61439-6'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 4–8 months · market 10–16 mo',
+          img: 'public/prod_big14.png'
+        },
+        {
+          code: 'LVS', name: 'Low Voltage\nSwitchboards', category: 'DATA CENTRES',
+          desc: 'Main distribution switchboards accepting transformer outputs and feeding PDUs, chillers and UPS trains — Drawout air circuit breakers with high interrupting capacity.',
+          specs: [
+            ['Rating', '2000–6000 A'],
+            ['Voltage', '480 V / 600 V AC'],
+            ['Breakers', 'Drawout power circuit breakers (100 kA)'],
+            ['Form', 'Form 4 separation for maximum safety'],
+            ['Standards', 'UL 891 · NEMA PB2 · ANSI C37.20.1'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 6–12 months · market 16–22 mo',
+          img: 'public/prod_big15.png'
+        },
+        {
+          code: 'MDS', name: 'Medium Voltage\nData Centre Sub', category: 'DATA CENTRES',
+          desc: 'Turnkey indoor MV lineup for data centre central utility plants — 15–34.5 kV arc-resistant switchgear feeding multiple facility unit-substations.',
+          specs: [
+            ['Voltage', '13.8 kV / 34.5 kV'],
+            ['Arc rating', 'Type 2B arc-resistant per IEEE C37.20.7'],
+            ['Bus', '3000 A main bus · silver-plated copper'],
+            ['Control', 'Dual redundant DC control power'],
+            ['Standards', 'IEEE C37.20.2 · UL 1558'],
+          ],
+          tags: ['DATA CENTRES', 'SUBSTATIONS'],
+          lead: 'Lead time 10–16 months · market 22–30 mo',
+          img: 'public/prod_big16.png'
+        },
+        {
+          code: 'GEN', name: 'Backup Diesel / Gas\nGenerator Sets', category: 'DATA CENTRES',
+          desc: 'Mission-critical emergency standby generator packages — fast-start engines capable of accepting 100% block load in single step within 10 seconds.',
+          specs: [
+            ['Output', '2.0–4.0 MW per generator unit'],
+            ['Engine', 'Tier 4 Final or EPA certified standby'],
+            ['Enclosure', 'Walk-in sound-attenuated (75 dBA @ 7m)'],
+            ['Fuel', 'Diesel / HVO biofuels / Natural Gas'],
+            ['Standards', 'ISO 8528 · NFPA 110 Level 1'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 12–20 months · market 26–36 mo',
+          img: 'public/prod_big17.png'
+        },
+        {
+          code: 'ATS', name: 'Automatic Transfer\nSwitches', category: 'DATA CENTRES',
+          desc: 'Utility-to-generator transfer switches with bypass-isolation design for maintenance without interrupting power to downstream data loads.',
+          specs: [
+            ['Rating', '800–4000 A'],
+            ['Type', 'Bypass-isolation · open or closed transition'],
+            ['Controller', 'Microprocessor touch-screen logic'],
+            ['Enclosure', 'NEMA 1 / 3R stainless steel'],
+            ['Standards', 'UL 1008 · NFPA 110'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 4–8 months · market 12–18 mo',
+          img: 'public/prod_big18.png'
+        },
+        {
+          code: 'CHL', name: 'Chiller Plant Power\n& Controls', category: 'DATA CENTRES',
+          desc: 'Power distribution and variable frequency drive panels for data centre liquid cooling and CRAH/CRAC environmental control systems.',
+          specs: [
+            ['Rating', '480 V 3-phase'],
+            ['Drive type', 'Active front-end VFD (low THD)'],
+            ['Enclosure', 'NEMA 12 / 3R outdoor'],
+            ['SCADA', 'BACnet IP / Modbus TCP integrated'],
+            ['Standards', 'UL 508A · IEEE 519'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 6–10 months · market 14–20 mo',
+          img: 'public/prod_big19.png'
+        },
+        {
+          code: 'RHR', name: 'Harmonic Filters &\nReactors', category: 'DATA CENTRES',
+          desc: 'Active and passive harmonic mitigation systems protecting facility power quality from VFD and UPS non-linear feedback.',
+          specs: [
+            ['Rating', '50–600 A active filter current'],
+            ['Mitigation', '<5% THD-I compliant with IEEE 519'],
+            ['Voltage', '480 V / 600 V'],
+            ['Response', '<1 ms fast dynamic correction'],
+            ['Standards', 'IEEE 519-2014 · UL 508'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 4–8 months · market 10–14 mo',
+          img: 'public/prod_big20.png'
+        },
+        {
+          code: 'RPP', name: 'Remote Power\nPanels (RPP)', category: 'DATA CENTRES',
+          desc: 'Ultra-compact floor-mount distribution panels extending PDU capacity directly into high-density server rows.',
+          specs: [
+            ['Rating', '150–400 A'],
+            ['Panelboards', 'Up to 4 × 42-circuit panelboards (168 ccts)'],
+            ['Monitoring', 'Current, voltage, power per branch circuit'],
+            ['Footprint', '24" x 24" tile-matching cabinet'],
+            ['Standards', 'UL 891 · NFPA 70'],
+          ],
+          tags: ['DATA CENTRES'],
+          lead: 'Lead time 4–8 months · market 10–14 mo',
+          img: 'public/prod_big21.png'
+        },
+      ];
+
+      const urlParams = new URLSearchParams(window.location.search);
+      let productIdx = parseInt(urlParams.get('id') || '0', 10);
+      if (isNaN(productIdx) || productIdx < 0 || productIdx >= PRODUCTS.length) {
+        productIdx = 0;
+      }
+
+      const psImage = document.getElementById('ps-image');
+      const psCode = document.getElementById('ps-code');
+      const psName = document.getElementById('ps-name');
+      const psDesc = document.getElementById('ps-desc');
+      const psSpecs = document.getElementById('ps-specs');
+      const psTags = document.getElementById('ps-tags');
+      const psLead = document.getElementById('ps-lead');
+      const psCounterTop = document.getElementById('ps-counter');
+      const psCounterBottom = document.getElementById('ps-counter-bottom');
+      const psPrevTop = document.getElementById('ps-prev');
+      const psNextTop = document.getElementById('ps-next');
+      const psPrevBottom = document.getElementById('ps-prev-bottom');
+      const psNextBottom = document.getElementById('ps-next-bottom');
+
+      function render(idx) {
+        productIdx = idx;
+        const p = PRODUCTS[idx];
+        document.title = `${p.code} – ${p.name.replace('\n', ' ')} | Unimacts`;
+        const countStr = `${idx + 1} / ${PRODUCTS.length}`;
+        if (psCounterTop) psCounterTop.textContent = countStr;
+        if (psCounterBottom) psCounterBottom.textContent = countStr;
+        psImage.src = p.img;
+        psImage.alt = p.name.replace('\n', ' ');
+        psCode.textContent = p.code;
+        psName.innerHTML = p.name.replace('\n', '<br>');
+        psDesc.textContent = p.desc;
+
+        psSpecs.innerHTML = p.specs.map(([label, val]) =>
+          `<tr><td class="ps-spec-label">${label}</td><td class="ps-spec-val">${val}</td></tr>`
+        ).join('');
+
+        psTags.innerHTML = p.tags.map(t => `<span class="ps-tag">${t}</span>`).join('');
+        psLead.textContent = p.lead;
+
+        const isFirst = idx === 0;
+        const isLast = idx === PRODUCTS.length - 1;
+        if (psPrevTop) psPrevTop.disabled = isFirst;
+        if (psNextTop) psNextTop.disabled = isLast;
+        if (psPrevBottom) psPrevBottom.disabled = isFirst;
+        if (psNextBottom) psNextBottom.disabled = isLast;
+
+        // Update URL search query without full reload
+        const newUrl = `${window.location.pathname}?id=${idx}`;
+        window.history.replaceState({ path: newUrl }, '', newUrl);
+      }
+
+      function navigate(newIdx) {
+        if (newIdx >= 0 && newIdx < PRODUCTS.length) {
+          render(newIdx);
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      if (psPrevTop) psPrevTop.addEventListener('click', () => navigate(productIdx - 1));
+      if (psNextTop) psNextTop.addEventListener('click', () => navigate(productIdx + 1));
+      if (psPrevBottom) psPrevBottom.addEventListener('click', () => navigate(productIdx - 1));
+      if (psNextBottom) psNextBottom.addEventListener('click', () => navigate(productIdx + 1));
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'ArrowRight') navigate(productIdx + 1);
+        if (e.key === 'ArrowLeft') navigate(productIdx - 1);
+      });
+
+      render(productIdx);
+    })();
+  </script>
+</body>
+
+</html>

@@ -1975,8 +1975,7 @@
           if (!view) return;
 
           if (button.classList.contains('is-active')) return;
-
-          blueprint.classList.add('is-switching');
+        blueprint.classList.add('is-switching');
 
           blueprint.querySelectorAll('[data-blueprint-view]').forEach((tab) => {
             const active = tab === button;
@@ -2032,7 +2031,7 @@
     <header class="po-header">
       <button class="po-back" id="po-back">← Back to deck</button>
       <span class="po-category" id="po-category"></span>
-      <nav class="po-nav">
+      <nav class="po-nav po-nav-top">
         <button class="po-nav-btn" id="po-prev">← Prev</button>
         <span class="po-counter" id="po-counter">1 / 21</span>
         <button class="po-nav-btn" id="po-next">Next →</button>
@@ -2049,6 +2048,11 @@
         <table class="po-specs" id="po-specs"></table>
         <div class="po-tags" id="po-tags"></div>
         <div class="po-lead" id="po-lead"></div>
+        <nav class="po-nav po-nav-bottom">
+          <button class="po-nav-btn" id="po-prev-bottom">← Prev</button>
+          <span class="po-counter" id="po-counter-bottom">1 / 21</span>
+          <button class="po-nav-btn" id="po-next-bottom">Next →</button>
+        </nav>
       </div>
     </div>
   </div>
@@ -2118,17 +2122,17 @@
         },
         {
           code: 'PMT', name: 'Pad-Mount\nDistribution', category: 'SOLAR & BESS',
-          desc: 'Step-down distribution at the inverter block level — 34.5 kV primary, 400/480 V secondary, in tamper-resistant pad-mount enclosures with loop-feed capability.',
+          desc: 'Step-up transformers at each solar inverter or BESS container — loop-feed, radial, vegetable oil (FR3) options for environmental compliance.',
           specs: [
-            ['Rating', '50–2500 kVA'],
+            ['Rating', '1–5 MVA'],
             ['Primary', '34.5 kV'],
-            ['Secondary', '400/480 V'],
-            ['Type', 'Pad-mount · tamper-resistant cabinet'],
-            ['Cooling', 'Mineral oil · natural ester optional'],
-            ['Standards', 'IEEE C57.12.25 · ANSI'],
+            ['Secondary', '600 V / 800 V / 1.5 kV'],
+            ['Fluid', 'FR3 natural ester / mineral oil'],
+            ['Protection', 'Bay-O-Net, current-limiting fuses'],
+            ['Standards', 'IEEE C57.12.34 · ANSI'],
           ],
           tags: ['UTILITY SOLAR', 'BESS'],
-          lead: 'Lead time 6–12 months · market 14–20 mo',
+          lead: 'Lead time 10–16 months · market 20–28 mo',
           img: 'public/prod_big5.png'
         },
         {
@@ -2433,11 +2437,13 @@
         if (e.key === 'ArrowLeft' && currentProduct > 0) renderProduct(currentProduct - 1);
       });
 
-      // Wire up all product cards — click anywhere to open
+      // Wire up all product cards — click anywhere to navigate to standalone product endpoint
       const allCards = document.querySelectorAll('.product-card, .data-product-row article');
       allCards.forEach((card, i) => {
         card.style.cursor = 'pointer';
-        card.addEventListener('click', () => openOverlay(i));
+        card.addEventListener('click', () => {
+          window.location.href = `product.html?id=${i}`;
+        });
       });
     })();
   </script>
