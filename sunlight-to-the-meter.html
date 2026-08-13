@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunlight to the meter – Unimacts Value Chain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #F8F8F8;
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      padding: 24px 40px 60px;
+      min-height: 100vh;
+    }
+
+    .page-container {
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    /* Top Navigation Header */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 24px;
+      border-bottom: 1px solid #E0E0E0;
+      margin-bottom: 32px;
+    }
+
+    .top-left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .btn-back {
+      background-color: #FF0000;
+      color: #FFF;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn-back:hover {
+      background-color: #D60000;
+    }
+
+    .nav-category {
+      color: #666;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .top-right-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-arrow-btn {
+      background: #FFF;
+      border: 1px solid #E0E0E0;
+      color: #000;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 8px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: background 0.15s ease;
+    }
+
+    .nav-arrow-btn:hover {
+      background: #F0F0F0;
+    }
+
+    .nav-page-num {
+      font-size: 12px;
+      font-weight: 500;
+      color: #444;
+      padding: 0 4px;
+    }
+
+    /* Main Title Block */
+    .title-block {
+      margin-bottom: 24px;
+    }
+
+    .main-heading {
+      color: #000;
+      font-family: 'Kanit', sans-serif;
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      margin-bottom: 14px;
+    }
+
+    .main-description {
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      max-width: 920px;
+      margin-bottom: 24px;
+    }
+
+    /* Legend Bar */
+    .legend-bar {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 20px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .legend-supplies {
+      position: relative;
+      padding-top: 4px;
+    }
+
+    .legend-supplies::before {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 3px;
+      background: #FF0000;
+      position: absolute;
+      top: -2px;
+      left: 0;
+    }
+
+    .legend-industry {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+      color: #444;
+    }
+
+    .legend-box {
+      width: 12px;
+      height: 12px;
+      border: 1px solid #CCC;
+      background: #FFF;
+    }
+
+    /* Cards Flow Container */
+    .flow-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 14px;
+      position: relative;
+    }
+
+    .flow-row.row-2 {
+      grid-template-columns: repeat(6, 1fr);
+      max-width: calc((100% / 7 * 6) + 70px);
+    }
+
+    /* Stage Card */
+    .stage-card {
+      background: #FFF;
+      border: 1px solid #E5E5E5;
+      border-top: 1px solid #E5E5E5;
+      padding: 14px 12px 14px;
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+      position: relative;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .stage-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .stage-card.is-unimacts {
+      border-top: 3px solid #FF0000;
+    }
+
+    .stage-img-wrap {
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      background: #FFF;
+    }
+
+    .stage-img-wrap img {
+      max-width: 100%;
+      max-height: 90px;
+      object-fit: contain;
+    }
+
+    .stage-num {
+      font-size: 10px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #999;
+    }
+
+    .stage-card.is-unimacts .stage-num {
+      color: #FF0000;
+    }
+
+    .stage-title {
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      letter-spacing: -0.12px;
+      margin-bottom: 4px;
+    }
+
+    .stage-sub {
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      color: #666;
+    }
+
+    .stage-specs-link {
+      color: #FF0000;
+      font-family: 'Inter', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      text-decoration: none;
+      margin-top: auto;
+      padding-top: 8px;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+
+    .stage-specs-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Other Products Section */
+    .other-section {
+      border-top: 1px solid #E0E0E0;
+      padding-top: 30px;
+      margin-bottom: 40px;
+    }
+
+    .other-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 18px;
+    }
+
+    .other-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 210px);
+      gap: 16px;
+    }
+
+    .other-card {
+      background: #FFF;
+      border: 1px solid #E5E5E5;
+      border-top: 3px solid #FF0000;
+      padding: 14px 14px 16px;
+      display: flex;
+      flex-direction: column;
+      min-height: 220px;
+    }
+
+    .other-card .stage-img-wrap {
+      height: 105px;
+    }
+
+    /* Footer Details */
+    .page-footer {
+      margin-top: 30px;
+    }
+
+    .footer-note {
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      opacity: 0.6;
+      margin-bottom: 24px;
+    }
+
+    .footer-logo-wrap {
+      display: inline-block;
+    }
+
+    .footer-logo-wrap svg {
+      width: 135px;
+      height: 24px;
+      display: block;
+    }
+
+    /* Responsive scaling for mobile / tablets */
+    @media (max-width: 1100px) {
+      .flow-row {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .flow-row.row-2 {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 100%;
+      }
+      .other-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px 20px 40px;
+      }
+      .flow-row, .flow-row.row-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .other-grid {
+        grid-template-columns: 1fr;
+      }
+      .main-heading {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-container">
+
+    <!-- Top Navigation Header -->
+    <header class="top-nav">
+      <div class="top-left">
+        <a href="index.html" class="btn-back">← Back to deck</a>
+        <span class="nav-category">VALUE CHAIN · SOLAR &amp; BESS</span>
+      </div>
+      <div class="top-right-nav">
+        <a href="#" class="nav-arrow-btn">← PREV</a>
+        <span class="nav-page-num">1/2</span>
+        <a href="#" class="nav-arrow-btn">NEXT →</a>
+      </div>
+    </header>
+
+    <!-- Main Title & Description -->
+    <section class="title-block">
+      <h1 class="main-heading">Sunlight to the meter</h1>
+      <p class="main-description">
+        Thirteen equipment stages from DC generation to the low-voltage panel. Unimacts supplies the modules, the
+        transformer and switching stages that carry the plant from inverter output to the grid, and again on the
+        distribution side — select any red-outlined stage for its specification page.
+      </p>
+
+      <!-- Legend -->
+      <div class="legend-bar">
+        <div class="legend-item legend-supplies">Unimacts supplies</div>
+        <div class="legend-item legend-industry">
+          <span class="legend-box"></span> Industry (Jul 2026 market)
+        </div>
+      </div>
+    </section>
+
+    <!-- 13 Flow Cards Section -->
+    <section class="flow-grid">
+      <!-- Row 1: Stages 01 to 07 -->
+      <div class="flow-row">
+        <!-- 01 PV Modules -->
+        <article class="stage-card is-unimacts">
+          <div class="stage-img-wrap">
+            <img src="public/sun1.png" alt="PV Modules">
+          </div>
+          <span class="stage-num">01</span>
+          <h3 class="stage-title">PV Modules</h3>
+          <p class="stage-sub">DC generation</p>
+        </article>
+
+        <!-- 02 String Combiner Box -->
+        <article class="stage-card">
+          <div class="stage-img-wrap">
+            <img src="public/sun2.png" alt="String Combiner Box">
+          </div>
+          <span class="stage-num">02</span>
+          <h3 class="stage-title">String Combiner Box</h3>
+          <p class="stage-sub">SCB</p>
+        </article>
+
+        <!-- 03 DC Isolator -->
+        <article class="stage-card is-unimacts">
+          <div class="stage-img-wrap">
+            <img src="public/sun3.png" alt="DC Isolator">
+          </div>
+          <span class="stage-num">03</span>
+          <h3 class="stage-title">DC Isolator</h3>
+          <p class="stage-sub">Protection</p>
+        </article>
+
+        <!-- 04 Solar Inverter -->
+        <article class="stage-card">
+          <div class="stage-img-wrap">
+            <img src="public/sun4.png" alt="Solar Inverter">
+          </div>
+          <span class="stage-num">04</span>
+          <h3 class="stage-title">Solar Inverter</h3>
+          <p class="stage-sub">DC → AC</p>
+        </article>
+
+        <!-- 05 LT Switchgear -->
+        <article class="stage-card is-unimacts">
+          <div class="stage-img-wrap">
+            <img src="public/sun5.png" alt="LT Switchgear">
+          </div>
+          <span class="stage-num">05</span>
+          <h3 class="stage-title">LT Switchgear</h3>
+          <p class="stage-sub">AC panel</p>
+        </article>
+
+        <!-- 06 Step-Up Transformer -->
+        <article class="stage-card is-unimacts">
+          <div class="stage-img-wrap">
+            <img src="public/sun6.png" alt="Step-Up Transformer">
+          </div>
+          <span class="stage-num">06</span>
+          <h3 class="stage-title">Step-Up Transformer</h3>
+          <p class="stage-sub">415 V → 11/33/66/132 kV</p>
+          <a href="#" class="stage-specs-link">VIEW SPECS →</a>
+        </article>
+
+        <!-- 07 HT Switchyard -->
+        <article class="stage-card is-unimacts">
+          <div class="stage-img-wrap">
+            <img src="public/sun7.png" alt="HT Switchyard">
+          </div>
+          <span class="stage-num">07</span>
+          <h3 class="stage-title">HT Switchyard</h3>
+          <p class="stage-sub">CB · CT · PT · relays</p>
+          <a href="#" class="stage-specs-link">VIEW SPECS →</a>
+        </article>
+      </div>
+
+      <!-- Row 2: Stages 08 to 13 -->
+      <div class="flow-row row-2">
+        <!-- 08 Transmission Lines -->
+        <article class="stage-card">
+          <div class="stage-img-wrap">
+            <img src="public/sun8.png" alt="Transmission Lines">
+          </div>
+          <span class="stage-num">08</span>
+          <h3 class="stage-title">Transmission Lines</h3>
+          <p class="stage-sub">132-765 kV</p>
+        </article>
+
+        <!-- 09 Grid Substation -->
+        <article class="stage-card">
+          <div class="stage-img-wrap">
+            <img src="public/sun9.png" alt="Grid Substation">
+          </div>
+          <span class="stage-num">09</span>
+          <h3 class="stage-title">Grid Substation</h3>
+        </article>
+
+        <!-- 10 Step-Down Transformer -->
+        <article class="stage-card is-unimacts">
+          <div class="stage-img-wrap">
+            <img src="public/sun10.png" alt="Step-Down Transformer">
+          </div>
+          <span class="stage-num">10</span>
+          <h3 class="stage-title">Step-Down Transformer</h3>
+          <a href="#" class="stage-specs-link">VIEW SPECS →</a>
+        </article>
+
+        <!-- 11 Distribution Substation -->
+        <article class="stage-card is-unimacts">
+          <div class="stage-img-wrap">
+            <img src="public/sun11.png" alt="Distribution Substation">
+          </div>
+          <span class="stage-num">11</span>
+          <h3 class="stage-title">Distribution Substation</h3>
+          <p class="stage-sub">33/11 kV</p>
+          <a href="#" class="stage-specs-link">VIEW SPECS →</a>
+        </article>
+
+        <!-- 12 Distribution Transformer -->
+        <article class="stage-card is-unimacts">
+          <div class="stage-img-wrap">
+            <img src="public/sun12.png" alt="Distribution Transformer">
+          </div>
+          <span class="stage-num">12</span>
+          <h3 class="stage-title">Distribution Transformer</h3>
+          <p class="stage-sub">11 kV → 415/230 V</p>
+          <a href="#" class="stage-specs-link">VIEW SPECS →</a>
+        </article>
+
+        <!-- 13 LT Panel / Meter -->
+        <article class="stage-card">
+          <div class="stage-img-wrap">
+            <img src="public/sun13.png" alt="LT Panel / Meter">
+          </div>
+          <span class="stage-num">13</span>
+          <h3 class="stage-title">LT Panel / Meter</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- Other Products Section -->
+    <section class="other-section">
+      <h2 class="other-title">Other products by Unimacts</h2>
+      <div class="other-grid">
+        <!-- Product 1 -->
+        <article class="other-card">
+          <div class="stage-img-wrap">
+            <img src="public/sun_other1.jpg" alt="Solar Foundations">
+          </div>
+          <h3 class="stage-title">Solar Foundations</h3>
+          <p class="stage-sub">Driven piles &amp; ground screws</p>
+          <a href="#" class="stage-specs-link">VIEW SPECS →</a>
+        </article>
+
+        <!-- Product 2 -->
+        <article class="other-card">
+          <div class="stage-img-wrap">
+            <img src="public/sun_other2.png" alt="Wire &amp; Cables">
+          </div>
+          <h3 class="stage-title">Wire &amp; Cables</h3>
+          <p class="stage-sub">DC strings &amp; AC collection</p>
+          <a href="#" class="stage-specs-link">VIEW SPECS →</a>
+        </article>
+
+        <!-- Product 3 -->
+        <article class="other-card">
+          <div class="stage-img-wrap">
+            <img src="public/sun_other3.png" alt="BESS">
+          </div>
+          <h3 class="stage-title">BESS</h3>
+          <p class="stage-sub">Co-located storage at the PCS block</p>
+          <a href="#" class="stage-specs-link">VIEW SPECS →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer Note & Logo -->
+    <footer class="page-footer">
+      <p class="footer-note">Chain structure and product photography per Unimacts Transformer Deck (July 2026), slides 9 and 41.</p>
+      <div class="footer-logo-wrap">
+        <svg xmlns="http://www.w3.org/2000/svg" width="90" height="16" viewBox="0 0 90 16" fill="none">
+          <path d="M28.9661 11.3018H29.7297L31.3445 15.1103H30.4796L30.1351 14.2634H28.5427L28.1981 15.1103H27.3535L28.9684 11.3018H28.9661ZM29.8355 13.527L29.3355 12.3017L28.8355 13.527H29.8378H29.8355Z" fill="#231F20"/>
+          <path d="M33.1572 14.4774L35.2293 12.0585H33.2225V11.3311H36.2946V11.9617L34.2225 14.3806H36.2946V15.1103H33.1572V14.4797V14.4774Z" fill="#231F20"/>
+          <path d="M36.9434 11.3291H39.7789V12.0701H37.7609V12.8358H39.5357V13.5768H37.7609V14.3696H39.806V15.1106H36.9434V11.3314V11.3291Z" fill="#231F20"/>
+          <path d="M41.2909 12.0948H40.1445V11.3291H43.2661V12.0948H42.1198V15.1084H41.2909V12.0948Z" fill="#231F20"/>
+          <path d="M43.4749 11.329H44.3623L45.1416 13.8875L45.9862 11.3154H46.6956L47.5402 13.8875L48.3195 11.329H49.1844L47.8983 15.1352H47.1776L46.3285 12.6623L45.4794 15.1352H44.7587L43.4727 11.329H43.4749Z" fill="#231F20"/>
+          <path d="M49.667 11.3291H52.5026V12.0701H50.4846V12.8358H52.2593V13.5768H50.4846V14.3696H52.5296V15.1106H49.6692V11.3314L49.667 11.3291Z" fill="#231F20"/>
+          <path d="M53.1373 11.3291H54.858C55.3355 11.3291 55.7004 11.4575 55.9549 11.712C56.1711 11.9282 56.2769 12.2165 56.2769 12.5746V12.5858C56.2769 12.8922 56.2026 13.1421 56.054 13.3336C55.9053 13.525 55.7094 13.6669 55.4707 13.757L56.3896 15.1084H55.4211L54.6125 13.8989H53.9617V15.1084H53.1328V11.3291H53.1351H53.1373ZM54.8062 13.1647C55.0112 13.1647 55.1666 13.1151 55.277 13.0183C55.3873 12.9214 55.4414 12.7908 55.4414 12.6287V12.6174C55.4414 12.4372 55.3851 12.3021 55.2702 12.212C55.1553 12.1219 54.9954 12.0768 54.7905 12.0768H53.9661V13.1624H54.8062V13.1647Z" fill="#231F20"/>
+          <path d="M56.8916 11.3289H57.7204V12.9821L59.2497 11.3289H60.2497L58.7159 12.9325L60.3196 15.1082H59.324L58.1574 13.4978L57.7204 13.9505V15.1059H56.8916V11.3267V11.3289Z" fill="#231F20"/>
+          <path d="M63.9302 15.1736C63.6531 15.1736 63.3987 15.124 63.1599 15.0227C62.9234 14.9213 62.7185 14.7839 62.5473 14.6105C62.3761 14.4371 62.241 14.2299 62.1441 13.9911C62.0473 13.7547 62 13.5002 62 13.2299V13.2186C62 12.9484 62.0496 12.6961 62.1441 12.4596C62.241 12.2231 62.3761 12.0159 62.5473 11.838C62.7185 11.6601 62.9257 11.5204 63.1667 11.4168C63.4077 11.3155 63.6734 11.2637 63.9617 11.2637C64.1374 11.2637 64.2973 11.2772 64.4437 11.3065C64.5901 11.3357 64.7207 11.3763 64.8378 11.4258C64.9549 11.4754 65.0653 11.5362 65.1667 11.6083C65.2658 11.6803 65.3604 11.7592 65.446 11.8447L64.9189 12.4551C64.7725 12.3222 64.6216 12.2186 64.4685 12.1421C64.3153 12.0655 64.1442 12.0294 63.955 12.0294C63.7973 12.0294 63.6509 12.061 63.5158 12.1218C63.3806 12.1826 63.2658 12.2682 63.1689 12.3763C63.0721 12.4844 62.9978 12.6105 62.9437 12.7524C62.8897 12.8943 62.8626 13.0475 62.8626 13.2096V13.2209C62.8626 13.383 62.8897 13.5362 62.9437 13.6803C62.9978 13.8245 63.0721 13.9506 63.1667 14.0587C63.2613 14.1668 63.3761 14.2524 63.5113 14.3155C63.6464 14.3785 63.7951 14.4101 63.955 14.4101C64.1712 14.4101 64.3513 14.3695 64.5 14.2907C64.6486 14.2119 64.7973 14.1038 64.9437 13.9664L65.4707 14.5002C65.3739 14.606 65.2725 14.6984 65.1689 14.7817C65.0653 14.865 64.9505 14.9348 64.8288 14.9956C64.705 15.0565 64.5698 15.1015 64.4234 15.1308C64.277 15.1623 64.1126 15.1781 63.9302 15.1781V15.1736Z" fill="#231F20"/>
+          <path d="M67.8308 15.1738C67.5402 15.1738 67.2722 15.122 67.0289 15.0206C66.7834 14.9193 66.574 14.7796 66.3961 14.6062C66.2181 14.4305 66.0808 14.2278 65.9817 13.9913C65.8848 13.7548 65.833 13.5026 65.833 13.2323V13.2211C65.833 12.9508 65.8826 12.6985 65.9839 12.462C66.0853 12.2256 66.2227 12.0184 66.4006 11.8404C66.5785 11.6625 66.7902 11.5229 67.0357 11.4193C67.2812 11.3179 67.5492 11.2661 67.8398 11.2661C68.1303 11.2661 68.3983 11.3179 68.6416 11.4193C68.8871 11.5206 69.0965 11.6603 69.2745 11.8337C69.4524 12.0094 69.5898 12.2121 69.6889 12.4485C69.788 12.685 69.8375 12.9373 69.8375 13.2076V13.2188C69.8375 13.4891 69.788 13.7413 69.6866 13.9778C69.5853 14.2143 69.4479 14.4215 69.2699 14.5995C69.092 14.7774 68.8825 14.917 68.6348 15.0206C68.3893 15.122 68.1213 15.1738 67.8308 15.1738ZM67.8398 14.4057C68.0042 14.4057 68.1573 14.3742 68.297 14.3134C68.4366 14.2526 68.556 14.167 68.6551 14.0589C68.7542 13.9508 68.8307 13.8247 68.887 13.6828C68.9434 13.5409 68.9704 13.3877 68.9704 13.2256V13.2143C68.9704 13.0522 68.9434 12.899 68.887 12.7548C68.8307 12.6107 68.7519 12.4846 68.6506 12.3765C68.5492 12.2684 68.4276 12.1828 68.288 12.1197C68.1483 12.0567 67.9952 12.0251 67.8308 12.0251C67.6663 12.0251 67.5087 12.0567 67.3713 12.1175C67.2339 12.1783 67.1145 12.2639 67.0154 12.372C66.9163 12.4801 66.8398 12.6062 66.7835 12.7481C66.7271 12.89 66.7001 13.0431 66.7001 13.2053V13.2166C66.7001 13.3787 66.7271 13.5319 66.7835 13.676C66.8398 13.8202 66.9186 13.9463 67.0199 14.0544C67.1213 14.1625 67.2429 14.2481 67.3803 14.3112C67.5177 14.3742 67.6709 14.4057 67.8398 14.4057Z" fill="#231F20"/>
+          <path d="M70.4395 11.3291H71.3336L72.3246 12.9282L73.3156 11.3291H74.2097V15.1084H73.3922V12.6399L72.3314 14.2548H72.3111L71.2615 12.6557V15.1084H70.444V11.3291H70.4395Z" fill="#231F20"/>
+          <path d="M74.9756 11.3289H76.5139C76.7391 11.3289 76.9418 11.3604 77.1197 11.4235C77.2977 11.4866 77.4486 11.5767 77.5724 11.6893C77.6963 11.8041 77.7932 11.9438 77.8585 12.1014C77.9238 12.2591 77.9576 12.4393 77.9576 12.6329V12.6442C77.9576 12.8649 77.917 13.0564 77.8382 13.223C77.5794 13.3897 77.6513 13.5271 77.5139 13.6375C77.3765 13.7478 77.2143 13.8334 77.0296 13.8875C76.845 13.9438 76.6468 13.9708 76.435 13.9708H75.8067V15.1059H74.9778V11.3267L74.9756 11.3289ZM76.4598 13.2343C76.667 13.2343 76.8292 13.1803 76.9441 13.0699C77.0589 12.9595 77.1152 12.8244 77.1152 12.6622V12.651C77.1152 12.464 77.0567 12.3222 76.9351 12.2253C76.8157 12.1285 76.6513 12.0789 76.4441 12.0789H75.8044V13.2343H76.4598Z" fill="#231F20"/>
+          <path d="M79.7249 11.3018H80.4884L82.1033 15.1103H81.2384L80.8938 14.2634H79.3015L78.9569 15.1103H78.1123L79.7272 11.3018H79.7249ZM80.5965 13.527L80.0965 12.3017L79.5965 13.527H80.5988H80.5965Z" fill="#231F20"/>
+          <path d="M82.5491 11.3291H83.3126L85.0761 13.6557V11.3291H85.8937V15.1084H85.1888L83.3644 12.7052V15.1084H82.5469V11.3291H82.5491Z" fill="#231F20"/>
+          <path d="M87.7255 13.6196L86.2773 11.3291H87.2458L88.1444 12.8471L89.0589 11.3291H90.0003L88.5521 13.6039V15.1106H87.7233V13.6219L87.7255 13.6196Z" fill="#231F20"/>
+          <path d="M20.1168 5.99106L18.4524 0.229794H13.1416L11.3105 8.87619H14.4614L15.7655 2.71853H15.7903L17.5651 8.87394H22.7092L24.5403 0.227539H21.3894L20.1687 5.9888H20.1168V5.99106Z" fill="#FF0000"/>
+          <path d="M29.7883 0.229492H26.1621L24.3311 8.87589H27.9594L29.7883 0.229492Z" fill="#FF0000"/>
+          <path d="M34.9388 8.87608H38.4478L42.1888 2.37383H42.2136L40.8375 8.87833H44.2023L46.0334 0.231934H40.5086L37.5379 6.02697H37.5131L36.9388 0.231934H31.4366L29.6055 8.87833H32.6843L34.0627 2.37607H34.0987L34.9411 8.87833L34.9388 8.87608Z" fill="#FF0000"/>
+          <path d="M55.4324 0.229492H50.9099L44.6914 8.87589H48.2477L49.2207 7.43895H53.6711L54 8.87589H57.9977L55.4324 0.229492ZM52.5247 2.52903L53.2229 5.54706H50.491L52.5247 2.52903Z" fill="#FF0000"/>
+          <path d="M58.1192 4.55406C57.5336 7.31983 58.5764 9.10361 62.8962 9.10361C64.7453 9.10361 66.5246 8.69594 67.689 7.76125C68.4931 7.11486 68.7363 6.35811 68.9255 5.58109H65.225C64.9525 6.69595 64.3084 7.20946 63.2093 7.20946C61.8016 7.20946 61.5832 5.98874 61.8872 4.55181C61.9187 4.39865 62.1417 3.69594 62.2521 3.41892C62.6147 2.50901 63.3219 1.8919 64.3377 1.8919C65.2971 1.8919 65.653 2.3536 65.5449 3.37612C66.5111 3.36486 67.4818 3.35811 68.457 3.35135C68.7251 3.35135 68.9908 3.34684 69.2543 3.34684C69.4908 2.14414 69.4165 1.62838 68.9976 1.12613C68.3985 0.407658 66.9796 0 64.8196 0C60.8129 0 59.0696 1.7027 58.4345 3.48648C58.3422 3.74774 58.1417 4.42343 58.1147 4.55181L58.1192 4.55406Z" fill="#FF0000"/>
+          <path d="M76.4794 2.3376H79.3082L79.7541 0.229492H70.4704L70.0244 2.3376H72.8533L71.4681 8.87589H75.0965L76.4816 2.3376H76.4794Z" fill="#FF0000"/>
+          <path d="M86.0248 3.44594C85.009 3.1554 84.0834 2.97748 83.8784 2.73198C83.7906 2.63739 83.7793 2.46847 83.8063 2.33558C83.9009 1.89189 84.3671 1.6036 85.1306 1.6036C85.5833 1.6036 85.928 1.66441 86.1419 1.8446C86.3671 2.02478 86.4572 2.32432 86.3806 2.8018H89.937C90.2658 1.01802 89.3716 0 85.7095 0C82.2613 0 80.3514 0.85135 79.9505 2.74324C79.9212 2.87838 79.8874 3.02252 79.8874 3.16892C79.8874 3.49324 79.991 3.98424 80.2388 4.25225C81.1802 5.27027 85.2117 5.67794 85.5833 6.22974C85.6577 6.33785 85.6892 6.47072 85.6554 6.62612C85.509 7.32207 84.6599 7.50001 83.9077 7.50001C83.4302 7.50001 83.1351 7.38063 82.9437 7.15315C82.7658 6.92568 82.7433 6.57658 82.8333 6.0991H79.1329C78.8649 7.70271 78.7951 9.10587 83.473 9.10587C87.3987 9.10587 89.1351 8.0045 89.5 6.29054C89.6779 5.4527 89.4369 4.97973 89.1599 4.68468C88.6599 4.1554 86.6622 3.62612 86.0271 3.44594H86.0248Z" fill="#FF0000"/>
+          <path d="M3.54281 5.80168L0.105875 5.4751L0.0653357 5.66655C-0.135115 6.60348 0.0788443 7.76563 1.36938 8.46834L3.6374 6.29492C3.57885 6.14177 3.54732 5.9751 3.54281 5.80168Z" fill="#FF0000"/>
+          <path d="M4.09235 6.87793L1.63965 8.60539C2.28154 8.88917 3.15316 9.06936 4.30181 9.08963L4.54506 7.08512C4.37164 7.04233 4.22299 6.96802 4.09461 6.87793H4.09235Z" fill="#FF0000"/>
+          <path d="M5.36711 7.08286L4.75 9.09188C5.90766 9.06936 6.85585 8.89143 7.61937 8.60764L5.90541 6.87793C5.73424 6.97027 5.55405 7.04007 5.36711 7.08286Z" fill="#FF0000"/>
+          <path d="M6.92086 5.80168C6.83978 5.97735 6.73618 6.14402 6.6123 6.29492L7.9524 8.46834C9.54474 7.76563 10.2542 6.60348 10.4546 5.66655L10.4952 5.4751L6.92086 5.80168Z" fill="#FF0000"/>
+          <path d="M7.32185 4.17319C7.25879 4.47049 7.19799 4.7475 7.14844 4.98174L10.5313 5.30157C10.957 3.31508 11.6169 0.229492 11.6169 0.229492H8.17321C8.17321 0.229492 7.84437 1.75202 7.53356 3.20021L10.5696 1.06057L7.32411 4.17093L7.32185 4.17319Z" fill="#FF0000"/>
+          <path d="M3.83305 4.17337L1.91863 1.06302L4.04026 3.20265C4.34882 1.7522 4.67089 0.231934 4.67089 0.231934H1.22719C1.22719 0.231934 0.567277 3.31526 0.141602 5.304L3.66187 4.98418C3.71142 4.74769 3.76998 4.47293 3.8353 4.17563L3.83305 4.17337Z" fill="#FF0000"/>
+        </svg>
+      </div>
+    </footer>
+
+  </div>
+</body>
+
+</html>
